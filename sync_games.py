@@ -14,6 +14,7 @@ STEAM_API_KEY = os.getenv("STEAM_API_KEY", "").strip()
 STEAM_ID = os.getenv("STEAM_ID", "").strip()
 # Full raw Cookie header string copied from browser network tab.
 GOG_COOKIE = os.getenv("GOG_COOKIE", "").strip()
+OUTPUT_DIR = os.getenv("OUTPUT_DIR", "data").strip() or "data"
 
 # ==========================
 # HELPERS
@@ -24,13 +25,71 @@ def timestamp():
 
 
 def save_output(data: List[Dict[str, Any]]) -> None:
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
     filename = f"games_{timestamp()}.json"
-    with open(filename, "w", encoding="utf-8") as f:
+    timestamped_path = os.path.join(OUTPUT_DIR, filename)
+    latest_path = os.path.join(OUTPUT_DIR, "games_latest.json")
+
+    with open(timestamped_path, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2)
-    with open("games_latest.json", "w", encoding="utf-8") as f:
+    with open(latest_path, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2)
-    print(f"\nSaved: {filename}")
-    print("Saved: games_latest.json")
+    print(f"\nSaved: {timestamped_path}")
+    print(f"Saved: {latest_path}")
+
+
+def build_game_accounts(data: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    grouped: Dict[str, List[Dict[str, Any]]] = {}
+    for game in data:
+        platform = str(game.get("platform") or "unknown")
+        grouped.setdefault(platform, []).append(game)
+
+    accounts: List[Dict[str, Any]] = []
+    generated_at = datetime.datetime.now().isoformat(timespec="seconds")
+    account_ref_map = {
+        "steam": STEAM_ID or "steam-account",
+        "epic": "legendary-account",
+        "gog": "gog-account",
+    }
+
+    for platform, games in sorted(grouped.items()):
+        sorted_games = sorted(
+            [g for g in games if isinstance(g, dict)],
+            key=lambda x: (x.get("name") or "").lower(),
+        )
+        game_names = [str(g.get("name") or "").strip() for g in sorted_games]
+        game_names = [name for name in game_names if name]
+        unique_names = sorted(set(game_names), key=lambda x: x.lower())
+        total_playtime = sum(int(g.get("playtime_minutes", 0) or 0) for g in sorted_games)
+
+        accounts.append(
+            {
+                "platform": platform,
+                "account_ref": account_ref_map.get(platform, f"{platform}-account"),
+                "total_games": len(sorted_games),
+                "unique_games": len(unique_names),
+                "total_playtime_minutes": total_playtime,
+                "games_csv": ", ".join(unique_names),
+                "generated_at": generated_at,
+            }
+        )
+    return accounts
+
+
+def save_game_accounts(data: List[Dict[str, Any]]) -> None:
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
+    filename = f"game_accounts_{timestamp()}.json"
+    timestamped_path = os.path.join(OUTPUT_DIR, filename)
+    latest_path = os.path.join(OUTPUT_DIR, "game_accounts_latest.json")
+    accounts = build_game_accounts(data)
+
+    with open(timestamped_path, "w", encoding="utf-8") as f:
+        json.dump(accounts, f, indent=2)
+    with open(latest_path, "w", encoding="utf-8") as f:
+        json.dump(accounts, f, indent=2)
+
+    print(f"Saved: {timestamped_path}")
+    print(f"Saved: {latest_path}")
 
 
 def parse_cookie_header(cookie_header: str) -> Dict[str, str]:
@@ -177,21 +236,65 @@ def extract_gog_games(payload: Any) -> List[Dict[str, Any]]:
     return []
 
 
+def fetch_gog_products_fallback(
+    headers: Dict[str, str], cookies: Dict[str, str]
+) -> List[Dict[str, Any]]:
+    products: List[Dict[str, Any]] = []
+    page = 1
+
+    while True:
+        url = "https://www.gog.com/account/getFilteredProducts"
+        params = {
+            "mediaType": "1",
+            "sortBy": "title",
+            "page": str(page),
+        }
+        r = requests.get(url, headers=headers, cookies=cookies, params=params, timeout=30)
+        r.raise_for_status()
+        data = r.json()
+
+        page_products = data.get("products", [])
+        if not isinstance(page_products, list):
+            break
+        products.extend([x for x in page_products if isinstance(x, dict)])
+
+        total_pages = int(data.get("totalPages", 1) or 1)
+        if page >= total_pages:
+            break
+        page += 1
+
+    return products
+
+
 def fetch_gog_games() -> List[Dict[str, Any]]:
     if not GOG_COOKIE:
         print("GOG skipped: missing GOG_COOKIE")
         return []
 
     url = "https://embed.gog.com/user/data/games"
-    headers = {"User-Agent": "Mozilla/5.0", "Accept": "application/json"}
+    headers = {
+        "User-Agent": "Mozilla/5.0",
+        "Accept": "application/json",
+        "Referer": "https://www.gog.com/account",
+        "X-Requested-With": "XMLHttpRequest",
+    }
     cookies = parse_cookie_header(GOG_COOKIE)
 
     try:
-        r = requests.get(url, headers=headers, cookies=cookies)
-        r.raise_for_status()
+        games: List[Dict[str, Any]] = []
 
-        data = r.json()
-        games = extract_gog_games(data)
+        # Primary endpoint.
+        try:
+            r = requests.get(url, headers=headers, cookies=cookies, timeout=30)
+            r.raise_for_status()
+            data = r.json()
+            games = extract_gog_games(data)
+        except Exception:
+            pass
+
+        # Fallback endpoint with pagination.
+        if not games:
+            games = fetch_gog_products_fallback(headers=headers, cookies=cookies)
 
         return [
             normalize_game(
@@ -203,6 +306,7 @@ def fetch_gog_games() -> List[Dict[str, Any]]:
                     "slug": g.get("slug"),
                     "image": g.get("image"),
                     "is_installed": g.get("isInstalled"),
+                    "is_hidden": g.get("isHidden"),
                 },
             )
             for g in games
@@ -211,6 +315,10 @@ def fetch_gog_games() -> List[Dict[str, Any]]:
 
     except Exception as e:
         print("GOG fetch failed:", e)
+        print(
+            "Hint: refresh GOG_COOKIE from a logged-in request to www.gog.com "
+            "(include all cookie pairs exactly as sent)."
+        )
         return []
 
 
@@ -234,6 +342,7 @@ def main():
     print(f"\nTotal games collected: {len(all_games)}")
 
     save_output(all_games)
+    save_game_accounts(all_games)
 
 
 if __name__ == "__main__":

@@ -1,0 +1,25 @@
+# Python bytecode/cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Tooling caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Local environment/secrets
+env.sh
+.env
+.env.*
+
+# Generated game exports
+data/*.json
+
+# OS/editor
+.DS_Store
