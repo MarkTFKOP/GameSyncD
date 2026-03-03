@@ -1,0 +1,721 @@
+[
+  {
+    "platform": "steam",
+    "id": "10",
+    "name": "Counter-Strike",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "20",
+    "name": "Team Fortress Classic",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "30",
+    "name": "Day of Defeat",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "40",
+    "name": "Deathmatch Classic",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "50",
+    "name": "Half-Life: Opposing Force",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "60",
+    "name": "Ricochet",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "70",
+    "name": "Half-Life",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "80",
+    "name": "Counter-Strike: Condition Zero",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "100",
+    "name": "Counter-Strike: Condition Zero Deleted Scenes",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "130",
+    "name": "Half-Life: Blue Shift",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "220",
+    "name": "Half-Life 2",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "240",
+    "name": "Counter-Strike: Source",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "280",
+    "name": "Half-Life: Source",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "300",
+    "name": "Day of Defeat: Source",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "320",
+    "name": "Half-Life 2: Deathmatch",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "360",
+    "name": "Half-Life Deathmatch: Source",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "400",
+    "name": "Portal",
+    "playtime_minutes": 43
+  },
+  {
+    "platform": "steam",
+    "id": "500",
+    "name": "Left 4 Dead",
+    "playtime_minutes": 46
+  },
+  {
+    "platform": "steam",
+    "id": "550",
+    "name": "Left 4 Dead 2",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "620",
+    "name": "Portal 2",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "3830",
+    "name": "Psychonauts",
+    "playtime_minutes": 133
+  },
+  {
+    "platform": "steam",
+    "id": "6860",
+    "name": "Hitman: Blood Money",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "6910",
+    "name": "Deus Ex: Game of the Year Edition",
+    "playtime_minutes": 20
+  },
+  {
+    "platform": "steam",
+    "id": "6920",
+    "name": "Deus Ex: Invisible War",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "10150",
+    "name": "Prototype",
+    "playtime_minutes": 984
+  },
+  {
+    "platform": "steam",
+    "id": "12210",
+    "name": "Grand Theft Auto IV: The Complete Edition",
+    "playtime_minutes": 565
+  },
+  {
+    "platform": "steam",
+    "id": "16450",
+    "name": "F.E.A.R. 2: Project Origin",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "17410",
+    "name": "Mirror's Edge",
+    "playtime_minutes": 825
+  },
+  {
+    "platform": "steam",
+    "id": "21090",
+    "name": "F.E.A.R.",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "21100",
+    "name": "F.E.A.R. 3",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "21110",
+    "name": "F.E.A.R.: Extraction Point",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "21120",
+    "name": "F.E.A.R.: Perseus Mandate",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "35140",
+    "name": "Batman: Arkham Asylum GOTY Edition",
+    "playtime_minutes": 913
+  },
+  {
+    "platform": "steam",
+    "id": "40990",
+    "name": "Mafia",
+    "playtime_minutes": 35
+  },
+  {
+    "platform": "steam",
+    "id": "48000",
+    "name": "LIMBO",
+    "playtime_minutes": 1
+  },
+  {
+    "platform": "steam",
+    "id": "49520",
+    "name": "Borderlands 2",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "108710",
+    "name": "Alan Wake",
+    "playtime_minutes": 23
+  },
+  {
+    "platform": "steam",
+    "id": "200260",
+    "name": "Batman: Arkham City GOTY",
+    "playtime_minutes": 1364
+  },
+  {
+    "platform": "steam",
+    "id": "203140",
+    "name": "Hitman: Absolution",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "204450",
+    "name": "Call of Juarez Gunslinger",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "205930",
+    "name": "Hitman: Sniper Challenge",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "208650",
+    "name": "Batman\u2122: Arkham Knight",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "219740",
+    "name": "Don't Starve",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "225540",
+    "name": "Just Cause 3",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "234140",
+    "name": "Mad Max",
+    "playtime_minutes": 68
+  },
+  {
+    "platform": "steam",
+    "id": "238010",
+    "name": "Deus Ex: Human Revolution - Director's Cut",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "241930",
+    "name": "Middle-earth\u2122: Shadow of Mordor\u2122",
+    "playtime_minutes": 1829
+  },
+  {
+    "platform": "steam",
+    "id": "258180",
+    "name": "Deus Ex: The Fall",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "289650",
+    "name": "Assassin's Creed Unity",
+    "playtime_minutes": 61
+  },
+  {
+    "platform": "steam",
+    "id": "292030",
+    "name": "The Witcher 3: Wild Hunt",
+    "playtime_minutes": 1367
+  },
+  {
+    "platform": "steam",
+    "id": "302510",
+    "name": "Ryse: Son of Rome",
+    "playtime_minutes": 248
+  },
+  {
+    "platform": "steam",
+    "id": "304390",
+    "name": "FOR HONOR",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "304430",
+    "name": "INSIDE",
+    "playtime_minutes": 363
+  },
+  {
+    "platform": "steam",
+    "id": "307690",
+    "name": "Sleeping Dogs: Definitive Edition",
+    "playtime_minutes": 2165
+  },
+  {
+    "platform": "steam",
+    "id": "337000",
+    "name": "Deus Ex: Mankind Divided\u2122",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "356190",
+    "name": "Middle-earth\u2122: Shadow of War\u2122",
+    "playtime_minutes": 4766
+  },
+  {
+    "platform": "steam",
+    "id": "367500",
+    "name": "Dragon's Dogma: Dark Arisen",
+    "playtime_minutes": 583
+  },
+  {
+    "platform": "steam",
+    "id": "371660",
+    "name": "Far Cry Primal",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "379720",
+    "name": "DOOM",
+    "playtime_minutes": 2050
+  },
+  {
+    "platform": "steam",
+    "id": "403640",
+    "name": "Dishonored 2",
+    "playtime_minutes": 1187
+  },
+  {
+    "platform": "steam",
+    "id": "423230",
+    "name": "Furi",
+    "playtime_minutes": 83
+  },
+  {
+    "platform": "steam",
+    "id": "473690",
+    "name": "Absolver",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "474960",
+    "name": "Quantum Break",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "524220",
+    "name": "NieR:Automata\u2122",
+    "playtime_minutes": 3190
+  },
+  {
+    "platform": "steam",
+    "id": "552500",
+    "name": "Warhammer: Vermintide 2",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "561770",
+    "name": "Just Ignore Them",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "601150",
+    "name": "Devil May Cry 5",
+    "playtime_minutes": 2790
+  },
+  {
+    "platform": "steam",
+    "id": "606280",
+    "name": "Darksiders III",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "632360",
+    "name": "Risk of Rain 2",
+    "playtime_minutes": 1636
+  },
+  {
+    "platform": "steam",
+    "id": "681280",
+    "name": "Descenders",
+    "playtime_minutes": 103
+  },
+  {
+    "platform": "steam",
+    "id": "732430",
+    "name": "Superflight",
+    "playtime_minutes": 118
+  },
+  {
+    "platform": "steam",
+    "id": "847370",
+    "name": "Sunset Overdrive",
+    "playtime_minutes": 1502
+  },
+  {
+    "platform": "steam",
+    "id": "1082430",
+    "name": "Before Your Eyes",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "1118200",
+    "name": "People Playground",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "1172380",
+    "name": "STAR WARS Jedi: Fallen Order\u2122 ",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "1180660",
+    "name": "Tell Me Why",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "1220150",
+    "name": "Blue Fire",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "1227690",
+    "name": "Severed Steel",
+    "playtime_minutes": 405
+  },
+  {
+    "platform": "steam",
+    "id": "1237970",
+    "name": "Titanfall\u00ae 2",
+    "playtime_minutes": 472
+  },
+  {
+    "platform": "steam",
+    "id": "1328670",
+    "name": "Mass Effect\u2122 Legendary Edition",
+    "playtime_minutes": 182
+  },
+  {
+    "platform": "steam",
+    "id": "1456200",
+    "name": "Initial Drift Online",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "1583230",
+    "name": "High On Life",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "1608450",
+    "name": "Hellslave",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "1793350",
+    "name": "Blue Fire: Void Maker",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "epic",
+    "id": "19927295d6e3467887d4e830d8c85963",
+    "name": null
+  },
+  {
+    "platform": "epic",
+    "id": "ece4c58603d04bcb97454be9a7492fa6",
+    "name": null
+  },
+  {
+    "platform": "epic",
+    "id": "d7db33dfe7634d6b8a188c708f2caa3c",
+    "name": null
+  },
+  {
+    "platform": "epic",
+    "id": "aa78f7be2ee64193b6b6444c5fc50157",
+    "name": null
+  },
+  {
+    "platform": "epic",
+    "id": "aafc587fbf654758802c8e41e4fb3255",
+    "name": null
+  },
+  {
+    "platform": "epic",
+    "id": "e3c0d11648554383b33da58d075fd101",
+    "name": null
+  },
+  {
+    "platform": "epic",
+    "id": "a21fd90517bf428eb7c995a8c3261722",
+    "name": null
+  },
+  {
+    "platform": "epic",
+    "id": "Catnip",
+    "name": null
+  },
+  {
+    "platform": "epic",
+    "id": "998af0ab527c493baefb8049250c9a0e",
+    "name": null
+  },
+  {
+    "platform": "epic",
+    "id": "8727e9d0693542bda60769dc2ce33c20",
+    "name": null
+  },
+  {
+    "platform": "epic",
+    "id": "82a78a4dd6ef4eaa892707791b705073",
+    "name": null
+  },
+  {
+    "platform": "epic",
+    "id": "923130ebb546417b9d3115507f752d34",
+    "name": null
+  },
+  {
+    "platform": "epic",
+    "id": "Crow",
+    "name": null
+  },
+  {
+    "platform": "epic",
+    "id": "7334aba246154b63857435cb9c7eecd5",
+    "name": null
+  },
+  {
+    "platform": "epic",
+    "id": "c5109bdceb3a453bb38c2fdc964ddee8",
+    "name": null
+  },
+  {
+    "platform": "epic",
+    "id": "7ec86711ef70447fbfd4370ba9f185c6",
+    "name": null
+  },
+  {
+    "platform": "epic",
+    "id": "da2038ef19e94554898056d79168b3f8",
+    "name": null
+  },
+  {
+    "platform": "epic",
+    "id": "08c5c041aa2c4fe08fbd87c08fb37c36",
+    "name": null
+  },
+  {
+    "platform": "epic",
+    "id": "7e9ca4940ed0427699f687f538d8f72d",
+    "name": null
+  },
+  {
+    "platform": "epic",
+    "id": "ba0ad8b38e5642fc8de85d2017a3d70b",
+    "name": null
+  },
+  {
+    "platform": "epic",
+    "id": "Grouse",
+    "name": null
+  },
+  {
+    "platform": "epic",
+    "id": "a1e2ce30defe4a9187ebc14fc9d2bd8b",
+    "name": null
+  },
+  {
+    "platform": "epic",
+    "id": "33411619626243f1859d0b7fb5cc5405",
+    "name": null
+  },
+  {
+    "platform": "epic",
+    "id": "f7a0ebb44f93430fb1c4388a395eba96",
+    "name": null
+  },
+  {
+    "platform": "epic",
+    "id": "cd1b8a6e5b6c47369e2a1e2cf7b7f536",
+    "name": null
+  },
+  {
+    "platform": "epic",
+    "id": "635e08e4b4824baabd24ef3cf941743c",
+    "name": null
+  },
+  {
+    "platform": "epic",
+    "id": "Snapper",
+    "name": null
+  },
+  {
+    "platform": "epic",
+    "id": "ad10e9b2f38d491499785412149cdc49",
+    "name": null
+  },
+  {
+    "platform": "epic",
+    "id": "668ffa8fce0847ef9f1c005995cee6df",
+    "name": null
+  },
+  {
+    "platform": "epic",
+    "id": "bf363d9625a5406f904d925f3e613327",
+    "name": null
+  },
+  {
+    "platform": "epic",
+    "id": "ecfdc10170eb49b6b61cf16b3aa36d56",
+    "name": null
+  },
+  {
+    "platform": "epic",
+    "id": "582c8940f499450d9033840efe5937a6",
+    "name": null
+  },
+  {
+    "platform": "epic",
+    "id": "3ce838d7a25c49368a22918b56e88f2a",
+    "name": null
+  },
+  {
+    "platform": "epic",
+    "id": "5cd54ad0ead447738bd9552b3d2a105b",
+    "name": null
+  },
+  {
+    "platform": "epic",
+    "id": "4d0ff75b922447649057c237c0bd1545",
+    "name": null
+  },
+  {
+    "platform": "epic",
+    "id": "cd98b47155654e1f9a9e84e60d0b49e4",
+    "name": null
+  },
+  {
+    "platform": "epic",
+    "id": "ed93b18355a84230938c705121c63661",
+    "name": null
+  },
+  {
+    "platform": "epic",
+    "id": "5919f2a03ba34e36b8e7de60acc26736",
+    "name": null
+  },
+  {
+    "platform": "epic",
+    "id": "37d84dd0b65a40e9b0719141b987a216",
+    "name": null
+  },
+  {
+    "platform": "epic",
+    "id": "1136763135c0482cbbb4b2d45e978156",
+    "name": null
+  },
+  {
+    "platform": "epic",
+    "id": "bd60c8f307e24e70abf12938e606d0c9",
+    "name": null
+  },
+  {
+    "platform": "epic",
+    "id": "38c0129b680e4843b4807b98bad67027",
+    "name": null
+  },
+  {
+    "platform": "epic",
+    "id": "4f272a49a39742b795d63e1f483a7c7d",
+    "name": null
+  }
+]

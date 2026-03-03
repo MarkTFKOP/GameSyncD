@@ -1,0 +1,506 @@
+[
+  {
+    "platform": "steam",
+    "id": "10",
+    "name": "Counter-Strike",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "20",
+    "name": "Team Fortress Classic",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "30",
+    "name": "Day of Defeat",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "40",
+    "name": "Deathmatch Classic",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "50",
+    "name": "Half-Life: Opposing Force",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "60",
+    "name": "Ricochet",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "70",
+    "name": "Half-Life",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "80",
+    "name": "Counter-Strike: Condition Zero",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "100",
+    "name": "Counter-Strike: Condition Zero Deleted Scenes",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "130",
+    "name": "Half-Life: Blue Shift",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "220",
+    "name": "Half-Life 2",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "240",
+    "name": "Counter-Strike: Source",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "280",
+    "name": "Half-Life: Source",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "300",
+    "name": "Day of Defeat: Source",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "320",
+    "name": "Half-Life 2: Deathmatch",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "360",
+    "name": "Half-Life Deathmatch: Source",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "400",
+    "name": "Portal",
+    "playtime_minutes": 43
+  },
+  {
+    "platform": "steam",
+    "id": "500",
+    "name": "Left 4 Dead",
+    "playtime_minutes": 46
+  },
+  {
+    "platform": "steam",
+    "id": "550",
+    "name": "Left 4 Dead 2",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "620",
+    "name": "Portal 2",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "3830",
+    "name": "Psychonauts",
+    "playtime_minutes": 133
+  },
+  {
+    "platform": "steam",
+    "id": "6860",
+    "name": "Hitman: Blood Money",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "6910",
+    "name": "Deus Ex: Game of the Year Edition",
+    "playtime_minutes": 20
+  },
+  {
+    "platform": "steam",
+    "id": "6920",
+    "name": "Deus Ex: Invisible War",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "10150",
+    "name": "Prototype",
+    "playtime_minutes": 984
+  },
+  {
+    "platform": "steam",
+    "id": "12210",
+    "name": "Grand Theft Auto IV: The Complete Edition",
+    "playtime_minutes": 565
+  },
+  {
+    "platform": "steam",
+    "id": "16450",
+    "name": "F.E.A.R. 2: Project Origin",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "17410",
+    "name": "Mirror's Edge",
+    "playtime_minutes": 825
+  },
+  {
+    "platform": "steam",
+    "id": "21090",
+    "name": "F.E.A.R.",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "21100",
+    "name": "F.E.A.R. 3",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "21110",
+    "name": "F.E.A.R.: Extraction Point",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "21120",
+    "name": "F.E.A.R.: Perseus Mandate",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "35140",
+    "name": "Batman: Arkham Asylum GOTY Edition",
+    "playtime_minutes": 913
+  },
+  {
+    "platform": "steam",
+    "id": "40990",
+    "name": "Mafia",
+    "playtime_minutes": 35
+  },
+  {
+    "platform": "steam",
+    "id": "48000",
+    "name": "LIMBO",
+    "playtime_minutes": 1
+  },
+  {
+    "platform": "steam",
+    "id": "49520",
+    "name": "Borderlands 2",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "108710",
+    "name": "Alan Wake",
+    "playtime_minutes": 23
+  },
+  {
+    "platform": "steam",
+    "id": "200260",
+    "name": "Batman: Arkham City GOTY",
+    "playtime_minutes": 1364
+  },
+  {
+    "platform": "steam",
+    "id": "203140",
+    "name": "Hitman: Absolution",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "204450",
+    "name": "Call of Juarez Gunslinger",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "205930",
+    "name": "Hitman: Sniper Challenge",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "208650",
+    "name": "Batman\u2122: Arkham Knight",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "219740",
+    "name": "Don't Starve",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "225540",
+    "name": "Just Cause 3",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "234140",
+    "name": "Mad Max",
+    "playtime_minutes": 68
+  },
+  {
+    "platform": "steam",
+    "id": "238010",
+    "name": "Deus Ex: Human Revolution - Director's Cut",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "241930",
+    "name": "Middle-earth\u2122: Shadow of Mordor\u2122",
+    "playtime_minutes": 1829
+  },
+  {
+    "platform": "steam",
+    "id": "258180",
+    "name": "Deus Ex: The Fall",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "289650",
+    "name": "Assassin's Creed Unity",
+    "playtime_minutes": 61
+  },
+  {
+    "platform": "steam",
+    "id": "292030",
+    "name": "The Witcher 3: Wild Hunt",
+    "playtime_minutes": 1367
+  },
+  {
+    "platform": "steam",
+    "id": "302510",
+    "name": "Ryse: Son of Rome",
+    "playtime_minutes": 248
+  },
+  {
+    "platform": "steam",
+    "id": "304390",
+    "name": "FOR HONOR",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "304430",
+    "name": "INSIDE",
+    "playtime_minutes": 363
+  },
+  {
+    "platform": "steam",
+    "id": "307690",
+    "name": "Sleeping Dogs: Definitive Edition",
+    "playtime_minutes": 2165
+  },
+  {
+    "platform": "steam",
+    "id": "337000",
+    "name": "Deus Ex: Mankind Divided\u2122",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "356190",
+    "name": "Middle-earth\u2122: Shadow of War\u2122",
+    "playtime_minutes": 4766
+  },
+  {
+    "platform": "steam",
+    "id": "367500",
+    "name": "Dragon's Dogma: Dark Arisen",
+    "playtime_minutes": 583
+  },
+  {
+    "platform": "steam",
+    "id": "371660",
+    "name": "Far Cry Primal",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "379720",
+    "name": "DOOM",
+    "playtime_minutes": 2050
+  },
+  {
+    "platform": "steam",
+    "id": "403640",
+    "name": "Dishonored 2",
+    "playtime_minutes": 1187
+  },
+  {
+    "platform": "steam",
+    "id": "423230",
+    "name": "Furi",
+    "playtime_minutes": 83
+  },
+  {
+    "platform": "steam",
+    "id": "473690",
+    "name": "Absolver",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "474960",
+    "name": "Quantum Break",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "524220",
+    "name": "NieR:Automata\u2122",
+    "playtime_minutes": 3190
+  },
+  {
+    "platform": "steam",
+    "id": "552500",
+    "name": "Warhammer: Vermintide 2",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "561770",
+    "name": "Just Ignore Them",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "601150",
+    "name": "Devil May Cry 5",
+    "playtime_minutes": 2790
+  },
+  {
+    "platform": "steam",
+    "id": "606280",
+    "name": "Darksiders III",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "632360",
+    "name": "Risk of Rain 2",
+    "playtime_minutes": 1636
+  },
+  {
+    "platform": "steam",
+    "id": "681280",
+    "name": "Descenders",
+    "playtime_minutes": 103
+  },
+  {
+    "platform": "steam",
+    "id": "732430",
+    "name": "Superflight",
+    "playtime_minutes": 118
+  },
+  {
+    "platform": "steam",
+    "id": "847370",
+    "name": "Sunset Overdrive",
+    "playtime_minutes": 1502
+  },
+  {
+    "platform": "steam",
+    "id": "1082430",
+    "name": "Before Your Eyes",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "1118200",
+    "name": "People Playground",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "1172380",
+    "name": "STAR WARS Jedi: Fallen Order\u2122 ",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "1180660",
+    "name": "Tell Me Why",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "1220150",
+    "name": "Blue Fire",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "1227690",
+    "name": "Severed Steel",
+    "playtime_minutes": 405
+  },
+  {
+    "platform": "steam",
+    "id": "1237970",
+    "name": "Titanfall\u00ae 2",
+    "playtime_minutes": 472
+  },
+  {
+    "platform": "steam",
+    "id": "1328670",
+    "name": "Mass Effect\u2122 Legendary Edition",
+    "playtime_minutes": 182
+  },
+  {
+    "platform": "steam",
+    "id": "1456200",
+    "name": "Initial Drift Online",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "1583230",
+    "name": "High On Life",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "1608450",
+    "name": "Hellslave",
+    "playtime_minutes": 0
+  },
+  {
+    "platform": "steam",
+    "id": "1793350",
+    "name": "Blue Fire: Void Maker",
+    "playtime_minutes": 0
+  }
+]
