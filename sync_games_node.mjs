@@ -309,6 +309,43 @@ async function writeJson(filePath, data) {
   await fs.writeFile(filePath, JSON.stringify(data, null, 2), 'utf8');
 }
 
+async function pathExists(filePath) {
+  try {
+    await fs.access(filePath);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+async function writeWithBackup(targetPath, backupPath, data) {
+  const dir = path.dirname(targetPath);
+  const tempPath = path.join(dir, `.${path.basename(targetPath)}.tmp`);
+  const rollbackPath = path.join(dir, `.${path.basename(targetPath)}.rollback`);
+
+  const targetExists = await pathExists(targetPath);
+  if (targetExists) {
+    await fs.copyFile(targetPath, backupPath);
+    await fs.rename(targetPath, rollbackPath);
+  }
+
+  try {
+    await writeJson(tempPath, data);
+    await fs.rename(tempPath, targetPath);
+    if (targetExists && (await pathExists(rollbackPath))) {
+      await fs.unlink(rollbackPath);
+    }
+  } catch (err) {
+    if (await pathExists(tempPath)) {
+      await fs.unlink(tempPath);
+    }
+    if (await pathExists(rollbackPath)) {
+      await fs.rename(rollbackPath, targetPath);
+    }
+    throw err;
+  }
+}
+
 async function main() {
   await fs.mkdir(OUTPUT_DIR, { recursive: true });
 
@@ -331,23 +368,19 @@ async function main() {
   });
 
   const accounts = buildGameAccounts(games);
-
-  const ts = timestamp();
-  const gamesTs = path.join(OUTPUT_DIR, `games_${ts}.json`);
   const gamesLatest = path.join(OUTPUT_DIR, 'games_latest.json');
-  const accountsTs = path.join(OUTPUT_DIR, `game_accounts_${ts}.json`);
   const accountsLatest = path.join(OUTPUT_DIR, 'game_accounts_latest.json');
+  const gamesBackup = path.join(OUTPUT_DIR, 'games_latest.bkp.json');
+  const accountsBackup = path.join(OUTPUT_DIR, 'game_accounts_latest.bkp.json');
 
-  await writeJson(gamesTs, games);
-  await writeJson(gamesLatest, games);
-  await writeJson(accountsTs, accounts);
-  await writeJson(accountsLatest, accounts);
+  await writeWithBackup(gamesLatest, gamesBackup, games);
+  await writeWithBackup(accountsLatest, accountsBackup, accounts);
 
   console.log(`Total games collected: ${games.length}`);
-  console.log(`Saved: ${gamesTs}`);
   console.log(`Saved: ${gamesLatest}`);
-  console.log(`Saved: ${accountsTs}`);
   console.log(`Saved: ${accountsLatest}`);
+  console.log(`Backup: ${gamesBackup}`);
+  console.log(`Backup: ${accountsBackup}`);
 }
 
 main().catch((err) => {

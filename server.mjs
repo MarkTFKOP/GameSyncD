@@ -31,6 +31,12 @@ async function readJsonSafe(filePath) {
   }
 }
 
+async function readJsonWithBackup(primaryPath, backupPath) {
+  const primary = await readJsonSafe(primaryPath);
+  if (primary) return primary;
+  return readJsonSafe(backupPath);
+}
+
 function runSync() {
   return new Promise((resolve) => {
     const child = spawn(process.execPath, ['sync_games_node.mjs'], {
@@ -106,14 +112,20 @@ const server = http.createServer(async (req, res) => {
   }
 
   if (url.pathname === '/api/games/latest') {
-    const data = await readJsonSafe(path.join(__dirname, OUTPUT_DIR, 'games_latest.json'));
-    if (!data) return json(res, 404, { ok: false, error: 'games_latest.json not found' });
+    const data = await readJsonWithBackup(
+      path.join(__dirname, OUTPUT_DIR, 'games_latest.json'),
+      path.join(__dirname, OUTPUT_DIR, 'games_latest.bkp.json'),
+    );
+    if (!data) return json(res, 404, { ok: false, error: 'games_latest(.bkp).json not found' });
     return json(res, 200, data);
   }
 
   if (url.pathname === '/api/accounts/latest') {
-    const data = await readJsonSafe(path.join(__dirname, OUTPUT_DIR, 'game_accounts_latest.json'));
-    if (!data) return json(res, 404, { ok: false, error: 'game_accounts_latest.json not found' });
+    const data = await readJsonWithBackup(
+      path.join(__dirname, OUTPUT_DIR, 'game_accounts_latest.json'),
+      path.join(__dirname, OUTPUT_DIR, 'game_accounts_latest.bkp.json'),
+    );
+    if (!data) return json(res, 404, { ok: false, error: 'game_accounts_latest(.bkp).json not found' });
     return json(res, 200, data);
   }
 

@@ -47,10 +47,13 @@ Lightweight backend + modern frontend for fetching and viewing owned games from 
 
 Saved under `OUTPUT_DIR` (default `data/`):
 
-- `games_YYYYMMDD_HHMMSS.json`
 - `games_latest.json`
-- `game_accounts_YYYYMMDD_HHMMSS.json`
 - `game_accounts_latest.json`
+- `games_latest.bkp.json`
+- `game_accounts_latest.bkp.json`
+
+The sync process always overwrites the same latest files and keeps backup copies.
+If a write fails, it restores from rollback and preserves the previous valid data.
 
 ## Epic troubleshooting
 
