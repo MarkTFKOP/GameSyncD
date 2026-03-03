@@ -1,47 +1,78 @@
 # sync-games
 
-Fetch owned games from Steam, Epic (Legendary), and GOG into unified JSON output.
+Lightweight backend + modern frontend for fetching and viewing owned games from Steam, Epic (Legendary), and GOG.
+
+## Stack
+
+- Backend: Node.js (`server.mjs`, `sync_games_node.mjs`)
+- Frontend: Vite + React + shadcn-style components + TanStack Table (`frontend/`)
 
 ## Quick start
 
-1. Create local env file:
+1. Create local env:
    ```bash
    cp env.example env.sh
    ```
-2. Fill `env.sh` values.
-3. Run:
+2. Fill `env.sh`.
+3. Run all:
    ```bash
    ./run.local.sh
    ```
+4. Open:
+   - Frontend: `http://localhost:5173`
+   - Backend API: `http://localhost:8787`
 
 ## Required setup
 
-- Python 3.10+
-- Epic login for Legendary:
+- Node.js 18+
+- Epic auth (once):
   ```bash
-  source venv/bin/activate
   legendary auth
   ```
+  If `legendary` is not on PATH, set `LEGENDARY_BIN` in `env.sh` or keep it at `./venv/bin/legendary`.
 - Steam:
-  - `STEAM_API_KEY` (Steam Web API key)
+  - `STEAM_API_KEY`
   - `STEAM_ID` (numeric SteamID64)
 - GOG:
-  - `GOG_COOKIE` as raw cookie header from an authenticated request
+  - `GOG_COOKIE` (full raw cookie header from logged-in `www.gog.com` request)
 
-## Output
+## API
 
-By default, all generated files are saved in `data/`:
+- `GET /api/health`
+- `GET /api/games/latest`
+- `GET /api/accounts/latest`
+- `POST /api/sync`
+
+## Output files
+
+Saved under `OUTPUT_DIR` (default `data/`):
 
 - `games_YYYYMMDD_HHMMSS.json`
 - `games_latest.json`
 - `game_accounts_YYYYMMDD_HHMMSS.json`
-- `game_accounts_latest.json` (array of account/platform summaries with `games_csv`)
+- `game_accounts_latest.json`
 
-You can change folder using `OUTPUT_DIR` in `env.sh`.
+## Epic troubleshooting
+
+If Epic returns zero games:
+
+1. Re-authenticate:
+   ```bash
+   legendary auth
+   ```
+2. Verify CLI works:
+   ```bash
+   legendary list-games --json
+   ```
+3. If command not found, set:
+   - `LEGENDARY_BIN=/absolute/path/to/legendary`
 
 ## Files
 
-- `sync_games.py`: fetch + normalize + write output
-- `run.local.sh`: one-command local run
-- `env.example`: template env file
-- `env.sh`: local env values
+- `sync_games_node.mjs`: sync job (Steam + Epic + GOG)
+- `server.mjs`: API server
+- `frontend/`: Vite React UI
+- `run.local.sh`: one-command sync + backend + frontend
+- `env.example`: template env
+- `env.sh`: local env
+- `sync_games.py`: legacy Python sync

@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game Accounts Dashboard</title>
+    <link
+      href="https://unpkg.com/tabulator-tables@6.3.0/dist/css/tabulator.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #f4f7fb;
+        --panel: #ffffff;
+        --ink: #0f172a;
+        --muted: #64748b;
+        --accent: #0ea5e9;
+        --border: #dbe5f0;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+        color: var(--ink);
+        background: radial-gradient(circle at top left, #e7f7ff, var(--bg));
+      }
+      .wrap {
+        max-width: 1100px;
+        margin: 24px auto;
+        padding: 0 16px;
+      }
+      .card {
+        background: var(--panel);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 16px;
+        box-shadow: 0 6px 16px rgba(15, 23, 42, 0.05);
+      }
+      h1 {
+        margin: 0 0 8px;
+        font-size: 1.4rem;
+      }
+      .sub {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+      .row {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        align-items: center;
+        margin: 14px 0;
+      }
+      input, button {
+        border-radius: 10px;
+        border: 1px solid var(--border);
+        font: inherit;
+      }
+      input {
+        padding: 10px 12px;
+        min-width: 260px;
+      }
+      button {
+        padding: 10px 14px;
+        cursor: pointer;
+        background: var(--accent);
+        color: white;
+        border-color: var(--accent);
+      }
+      button.secondary {
+        background: #fff;
+        color: var(--ink);
+      }
+      .status {
+        margin-left: auto;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+      .section-title {
+        margin: 16px 0 10px;
+        font-size: 1rem;
+      }
+      #accountsTable, #gamesTable {
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        overflow: hidden;
+      }
+      @media (max-width: 700px) {
+        .status {
+          width: 100%;
+          margin-left: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="card">
+        <h1>Game Accounts Dashboard</h1>
+        <p class="sub">Steam + Epic + GOG data via local Node API</p>
+
+        <div class="row">
+          <input id="search" type="text" placeholder="Search games by name/platform..." />
+          <button id="syncBtn">Sync now</button>
+          <button id="reloadBtn" class="secondary">Reload data</button>
+          <span class="status" id="status">Idle</span>
+        </div>
+
+        <h2 class="section-title">Accounts</h2>
+        <div id="accountsTable"></div>
+
+        <h2 class="section-title">Games</h2>
+        <div id="gamesTable"></div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/tabulator-tables@6.3.0/dist/js/tabulator.min.js"></script>
+    <script>
+      let gamesTable;
+      let accountsTable;
+
+      const statusEl = document.getElementById('status');
+      const searchEl = document.getElementById('search');
+      const syncBtn = document.getElementById('syncBtn');
+      const reloadBtn = document.getElementById('reloadBtn');
+
+      function setStatus(msg) {
+        statusEl.textContent = msg;
+      }
+
+      async function getJson(url) {
+        const res = await fetch(url);
+        if (!res.ok) throw new Error(`${url} -> ${res.status}`);
+        return res.json();
+      }
+
+      async function loadData() {
+        setStatus('Loading...');
+        try {
+          const [accounts, games] = await Promise.all([
+            getJson('/api/accounts/latest'),
+            getJson('/api/games/latest'),
+          ]);
+
+          accountsTable.replaceData(accounts);
+          gamesTable.replaceData(games);
+          setStatus(`Loaded ${games.length} games`);
+        } catch (err) {
+          setStatus(`Load failed: ${err.message}`);
+        }
+      }
+
+      async function syncNow() {
+        setStatus('Syncing...');
+        syncBtn.disabled = true;
+        try {
+          const res = await fetch('/api/sync', { method: 'POST' });
+          if (!res.ok) throw new Error(`Sync failed (${res.status})`);
+          await loadData();
+          setStatus('Sync completed');
+        } catch (err) {
+          setStatus(`Sync failed: ${err.message}`);
+        } finally {
+          syncBtn.disabled = false;
+        }
+      }
+
+      function initTables() {
+        accountsTable = new Tabulator('#accountsTable', {
+          layout: 'fitColumns',
+          height: 240,
+          placeholder: 'No account data yet',
+          columns: [
+            { title: 'Platform', field: 'platform' },
+            { title: 'Account', field: 'account_ref' },
+            { title: 'Total Games', field: 'total_games', hozAlign: 'right' },
+            { title: 'Unique', field: 'unique_games', hozAlign: 'right' },
+            { title: 'Playtime (min)', field: 'total_playtime_minutes', hozAlign: 'right' },
+          ],
+        });
+
+        gamesTable = new Tabulator('#gamesTable', {
+          layout: 'fitColumns',
+          height: 460,
+          placeholder: 'No game data yet',
+          pagination: true,
+          paginationSize: 25,
+          columns: [
+            { title: 'Name', field: 'name', minWidth: 280 },
+            { title: 'Platform', field: 'platform', width: 120 },
+            { title: 'ID', field: 'id', minWidth: 180 },
+            { title: 'Playtime (min)', field: 'playtime_minutes', width: 140, hozAlign: 'right' },
+          ],
+        });
+      }
+
+      searchEl.addEventListener('input', () => {
+        const value = searchEl.value.trim();
+        if (!value) {
+          gamesTable.clearFilter();
+          return;
+        }
+        gamesTable.setFilter([
+          [{ field: 'name', type: 'like', value }],
+          [{ field: 'platform', type: 'like', value }],
+          [{ field: 'id', type: 'like', value }],
+        ]);
+      });
+
+      syncBtn.addEventListener('click', syncNow);
+      reloadBtn.addEventListener('click', loadData);
+
+      initTables();
+      loadData();
+    </script>
+  </body>
+</html>

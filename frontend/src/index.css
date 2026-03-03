@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --radius: 1rem;
+
+  --background: 222 47% 11%;
+  --foreground: 210 40% 96%;
+
+  --card: 222 40% 16%;
+  --card-foreground: 210 40% 96%;
+
+  --popover: 222 40% 14%;
+  --popover-foreground: 210 40% 96%;
+
+  --primary: 190 95% 45%;
+  --primary-foreground: 222 47% 11%;
+
+  --secondary: 217 33% 22%;
+  --secondary-foreground: 210 40% 96%;
+
+  --muted: 217 28% 18%;
+  --muted-foreground: 215 20% 65%;
+
+  --accent: 195 100% 50%;
+  --accent-foreground: 222 47% 11%;
+
+  --destructive: 0 72% 51%;
+  --destructive-foreground: 210 40% 98%;
+
+  --border: 217 28% 22%;
+  --input: 217 28% 22%;
+  --ring: 190 95% 45%;
+
+  --chart-1: 190 95% 45%;
+  --chart-2: 260 80% 65%;
+  --chart-3: 140 70% 45%;
+  --chart-4: 35 90% 55%;
+  --chart-5: 340 75% 55%;
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+body {
+  @apply min-h-screen bg-background text-foreground antialiased;
+  font-family: 'Poppins', sans-serif;
+}
+
+.bg-hero-gradient {
+  background: radial-gradient(circle at 20% 30%, hsl(190 95% 25%) 0%, transparent 40%),
+    radial-gradient(circle at 80% 70%, hsl(260 60% 25%) 0%, transparent 40%), hsl(222 47% 11%);
+}
+
+.card-elevated {
+  background: hsl(222 40% 16% / 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid hsl(217 28% 22%);
+  box-shadow: 0 10px 40px -10px hsl(190 95% 45% / 0.2);
+}
+
+.metric-glow {
+  box-shadow: inset 0 0 0 1px hsl(217 28% 30%), 0 14px 36px -18px hsl(190 95% 45% / 0.45);
+}
