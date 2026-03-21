@@ -36,6 +36,8 @@ Lightweight backend + modern frontend for fetching and viewing owned games from 
 - GOG:
   - `GOG_COOKIE` (full raw cookie header from logged-in `www.gog.com` request)
 
+Credential refresh steps are documented in [credentials-refresh.md](/Users/markpereira/Desktop/My_Files/My Projects/sync-games/docs/credentials-refresh.md).
+
 ## API
 
 - `GET /api/health`

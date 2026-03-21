@@ -1,68 +1,149 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --radius: 1rem;
-
-  --background: 222 47% 11%;
+  --radius: 0.75rem;
+  --background: 220 9% 6%;
   --foreground: 210 40% 96%;
-
-  --card: 222 40% 16%;
+  --card: 215 7% 11%;
   --card-foreground: 210 40% 96%;
-
-  --popover: 222 40% 14%;
+  --popover: 215 7% 11%;
   --popover-foreground: 210 40% 96%;
-
-  --primary: 190 95% 45%;
-  --primary-foreground: 222 47% 11%;
-
-  --secondary: 217 33% 22%;
+  --primary: 186 100% 78%;
+  --primary-foreground: 220 9% 6%;
+  --secondary: 210 8% 14%;
   --secondary-foreground: 210 40% 96%;
-
-  --muted: 217 28% 18%;
-  --muted-foreground: 215 20% 65%;
-
-  --accent: 195 100% 50%;
-  --accent-foreground: 222 47% 11%;
-
+  --muted: 210 7% 12%;
+  --muted-foreground: 215 13% 68%;
+  --accent: 187 100% 49%;
+  --accent-foreground: 220 9% 6%;
   --destructive: 0 72% 51%;
   --destructive-foreground: 210 40% 98%;
-
-  --border: 217 28% 22%;
-  --input: 217 28% 22%;
-  --ring: 190 95% 45%;
-
-  --chart-1: 190 95% 45%;
-  --chart-2: 260 80% 65%;
-  --chart-3: 140 70% 45%;
-  --chart-4: 35 90% 55%;
-  --chart-5: 340 75% 55%;
+  --border: 210 7% 18%;
+  --input: 210 7% 18%;
+  --ring: 186 100% 78%;
+  --chart-1: 186 100% 78%;
+  --chart-2: 187 100% 49%;
+  --chart-3: 210 40% 96%;
+  --chart-4: 0 72% 51%;
+  --chart-5: 215 13% 68%;
 }
 
 * {
   border-color: hsl(var(--border));
 }
 
+*::selection {
+  background: hsl(var(--primary) / 0.2);
+  color: hsl(var(--foreground));
+}
+
 body {
   @apply min-h-screen bg-background text-foreground antialiased;
   font-family: 'Poppins', sans-serif;
+  background-image:
+    linear-gradient(rgba(143, 245, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(143, 245, 255, 0.03) 1px, transparent 1px),
+    radial-gradient(circle at 15% 20%, rgba(0, 238, 252, 0.08), transparent 26%),
+    radial-gradient(circle at 85% 75%, rgba(143, 245, 255, 0.05), transparent 24%);
+  background-size: 24px 24px, 24px 24px, auto, auto;
 }
 
 .bg-hero-gradient {
-  background: radial-gradient(circle at 20% 30%, hsl(190 95% 25%) 0%, transparent 40%),
-    radial-gradient(circle at 80% 70%, hsl(260 60% 25%) 0%, transparent 40%), hsl(222 47% 11%);
+  background:
+    linear-gradient(180deg, rgba(8, 11, 13, 0.96), rgba(8, 11, 13, 0.98)),
+    radial-gradient(circle at 12% 18%, rgba(0, 238, 252, 0.08), transparent 24%),
+    radial-gradient(circle at 82% 70%, rgba(143, 245, 255, 0.06), transparent 28%),
+    hsl(220 9% 6%);
 }
 
 .card-elevated {
-  background: hsl(222 40% 16% / 0.7);
-  backdrop-filter: blur(12px);
-  border: 1px solid hsl(217 28% 22%);
-  box-shadow: 0 10px 40px -10px hsl(190 95% 45% / 0.2);
+  position: relative;
+  background:
+    linear-gradient(180deg, rgba(24, 26, 28, 0.98), rgba(18, 20, 22, 0.98));
+  border: 1px solid hsl(var(--border));
+  border-radius: 16px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.03),
+    0 10px 28px rgba(0, 0, 0, 0.28),
+    0 1px 0 rgba(143, 245, 255, 0.04);
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    border-color 180ms ease;
+}
+
+.card-elevated::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+}
+
+.card-elevated::after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 4px;
+  height: 4px;
+  background: rgba(143, 245, 255, 0.35);
 }
 
 .metric-glow {
-  box-shadow: inset 0 0 0 1px hsl(217 28% 30%), 0 14px 36px -18px hsl(190 95% 45% / 0.45);
+  box-shadow:
+    inset 0 0 0 1px rgba(143, 245, 255, 0.08),
+    0 0 0 1px rgba(143, 245, 255, 0.05),
+    0 12px 32px rgba(0, 0, 0, 0.24);
+}
+
+.font-display {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.tech-label {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.6875rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hud-divider {
+  background:
+    linear-gradient(90deg, transparent, rgba(143, 245, 255, 0.35), transparent);
+  height: 1px;
+}
+
+.micro-lift {
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    border-color 160ms ease,
+    filter 160ms ease;
+}
+
+.micro-lift:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.03),
+    0 14px 34px rgba(0, 0, 0, 0.32),
+    0 0 0 1px rgba(143, 245, 255, 0.08);
+}
+
+.logo-mono {
+  filter: grayscale(1) brightness(1.55) contrast(1.35);
+  opacity: 0.96;
+}
+
+.surface-soft {
+  border-radius: 16px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.03),
+    0 10px 24px rgba(0, 0, 0, 0.18);
 }

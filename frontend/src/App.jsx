@@ -6,7 +6,23 @@ import { Input } from './components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './components/ui/select';
 import { uiTheme } from './theme';
 
-const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:8787';
+function resolveApiBase() {
+  if (import.meta.env.VITE_API_BASE) {
+    return import.meta.env.VITE_API_BASE;
+  }
+
+  if (typeof window !== 'undefined') {
+    const { hostname } = window.location;
+    if (hostname === 'localhost' || hostname === '127.0.0.1') {
+      return '';
+    }
+    return window.location.origin;
+  }
+
+  return '';
+}
+
+const API_BASE = resolveApiBase();
 
 async function requestJson(path, init) {
   const response = await fetch(`${API_BASE}${path}`, init);
@@ -192,18 +208,18 @@ function LibraryPage({ games, accounts, syncing, onSync }) {
 
   return (
     <main className="mx-auto flex h-full min-h-0 w-[96vw] max-w-[1880px] gap-4 py-4">
-      <aside className="hidden w-[280px] shrink-0 select-none rounded-xl border border-border/70 bg-card/75 p-4 backdrop-blur-xl lg:block">
-        <p className="mb-3 text-xs uppercase tracking-[0.2em] text-muted-foreground">Filters</p>
+      <aside className="surface-soft hidden w-[280px] shrink-0 select-none border border-border/70 bg-card p-4 lg:block">
+        <p className="tech-label mb-3 text-muted-foreground">Filters</p>
 
         <div className="space-y-3">
-          <p className="text-sm font-medium">Platforms</p>
+          <p className="font-display text-sm uppercase tracking-[0.05em]">Platforms</p>
           <button
             type="button"
             onClick={toggleAllPlatforms}
-            className="flex w-full items-center gap-2 rounded-md border border-border/80 bg-secondary/30 px-2 py-2 text-left text-sm hover:bg-secondary/50"
+            className="flex w-full items-center gap-2 rounded-md border border-border/80 bg-secondary px-3 py-2 text-left text-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.03)] transition-[transform,background-color,border-color] hover:-translate-y-px hover:bg-muted"
           >
             <span
-              className={`inline-flex h-4 w-4 items-center justify-center rounded-sm border ${allPlatformsSelected ? 'border-primary bg-primary text-primary-foreground' : 'border-border bg-background/70 text-transparent'}`}
+              className={`inline-flex h-4 w-4 items-center justify-center border ${allPlatformsSelected ? 'border-primary bg-primary text-primary-foreground' : 'border-border bg-background text-transparent'}`}
             >
               <Check className="h-3 w-3" />
             </span>
@@ -217,17 +233,17 @@ function LibraryPage({ games, accounts, syncing, onSync }) {
                   type="button"
                   key={platform}
                   onClick={() => togglePlatform(platform)}
-                  className={`flex w-full items-center justify-between rounded-md border px-2 py-1.5 text-sm ${active ? 'border-primary/40 bg-secondary/70 text-foreground' : 'border-border/70 bg-secondary/30 text-muted-foreground hover:bg-secondary/50'}`}
+                  className={`flex w-full items-center justify-between rounded-md border px-3 py-2 text-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.02)] transition-[transform,background-color,border-color] hover:-translate-y-px ${active ? 'border-primary/40 bg-secondary text-foreground' : 'border-border/70 bg-muted text-muted-foreground hover:bg-secondary'}`}
                 >
                   <span className="inline-flex items-center gap-2">
                     <span
-                      className={`inline-flex h-4 w-4 items-center justify-center rounded-sm border ${active ? 'border-primary bg-primary text-primary-foreground' : 'border-border bg-background/70 text-transparent'}`}
+                      className={`inline-flex h-4 w-4 items-center justify-center border ${active ? 'border-primary bg-primary text-primary-foreground' : 'border-border bg-background text-transparent'}`}
                     >
                       <Check className="h-3 w-3" />
                     </span>
                     <span className="capitalize">{platform}</span>
                   </span>
-                  <span className="rounded-full bg-background/60 px-2 py-0.5 text-xs">{platformCounts.get(platform) || 0}</span>
+                  <span className="rounded-full bg-background px-2 py-0.5 font-display text-[0.6875rem] uppercase">{platformCounts.get(platform) || 0}</span>
                 </button>
               );
             })}
@@ -235,14 +251,14 @@ function LibraryPage({ games, accounts, syncing, onSync }) {
         </div>
 
         <div className="mt-5 space-y-3">
-          <p className="text-sm font-medium">Options</p>
+          <p className="font-display text-sm uppercase tracking-[0.05em]">Options</p>
           <button
             type="button"
             onClick={() => setOnlyPlayed((prev) => !prev)}
-            className="flex w-full items-center gap-2 rounded-md border border-border/80 bg-secondary/30 px-2 py-2 text-left text-sm text-muted-foreground hover:bg-secondary/50"
+            className="flex w-full items-center gap-2 rounded-md border border-border/80 bg-secondary px-3 py-2 text-left text-sm text-muted-foreground shadow-[inset_0_1px_0_rgba(255,255,255,0.03)] transition-[transform,background-color,border-color] hover:-translate-y-px hover:bg-muted"
           >
             <span
-              className={`inline-flex h-4 w-4 items-center justify-center rounded-sm border ${onlyPlayed ? 'border-primary bg-primary text-primary-foreground' : 'border-border bg-background/70 text-transparent'}`}
+              className={`inline-flex h-4 w-4 items-center justify-center border ${onlyPlayed ? 'border-primary bg-primary text-primary-foreground' : 'border-border bg-background text-transparent'}`}
             >
               <Check className="h-3 w-3" />
             </span>
@@ -251,7 +267,7 @@ function LibraryPage({ games, accounts, syncing, onSync }) {
         </div>
       </aside>
 
-      <section className="flex min-h-0 flex-1 flex-col rounded-xl border border-border/70 bg-card/55 backdrop-blur-xl">
+      <section className="flex min-h-0 flex-1 flex-col border border-border/70 bg-card">
         <div className="flex flex-wrap items-center gap-3 border-b border-border/70 px-4 py-3">
           <div className="relative min-w-[230px] flex-1">
             <Search className="pointer-events-none absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
@@ -265,7 +281,7 @@ function LibraryPage({ games, accounts, syncing, onSync }) {
 
           <div className="w-[190px]">
             <Select value={sortBy} onValueChange={setSortBy}>
-              <SelectTrigger className="border-border/90 bg-secondary/80">
+              <SelectTrigger className="border-border/90 bg-secondary">
                 <SelectValue placeholder="Sort" />
               </SelectTrigger>
               <SelectContent>
@@ -289,7 +305,7 @@ function LibraryPage({ games, accounts, syncing, onSync }) {
             <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-7">
               {filteredSortedGames.map((game) => (
               <div key={`${game.platform}-${game.id}`} className="group select-none">
-                <div className="aspect-[3/4] overflow-hidden rounded-lg border border-border/70 bg-black/30">
+                <div className="aspect-[3/4] overflow-hidden rounded-lg border border-border/70 bg-black/30 shadow-[0_10px_22px_rgba(0,0,0,0.2)] transition-transform duration-150 group-hover:-translate-y-0.5">
                     <GameCover game={game} src={game.image_url || game.metadata?.image_url} alt={game.name || 'game cover'} />
                 </div>
                 <div className="mt-2 space-y-0.5">
@@ -375,16 +391,16 @@ function HomeDashboard({ games, accounts, syncing, onSync, onOpenLibrary }) {
   return (
     <main className="mx-auto flex h-full min-h-0 w-[96vw] max-w-[1880px] flex-col gap-4 py-4">
       <section className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-4">
-        <Card className="card-elevated h-full min-h-0">
+        <Card className="h-full min-h-0">
           <CardHeader className="pb-2">
-            <CardDescription>Total Games</CardDescription>
+            <CardDescription className="tech-label">Total Games</CardDescription>
             <CardTitle className="text-3xl">{totalGames}</CardTitle>
           </CardHeader>
           <CardContent className="text-sm text-muted-foreground">Owned titles across all synced platforms.</CardContent>
         </Card>
         <Card className="card-elevated">
           <CardHeader className="pb-2">
-            <CardDescription>Total Accounts</CardDescription>
+            <CardDescription className="tech-label">Total Accounts</CardDescription>
             <CardTitle className="flex items-center gap-2 text-3xl">
               <Users2 className="h-6 w-6 text-primary" />
               {totalAccounts}
@@ -394,14 +410,14 @@ function HomeDashboard({ games, accounts, syncing, onSync, onOpenLibrary }) {
         </Card>
         <Card className="card-elevated">
           <CardHeader className="pb-2">
-            <CardDescription>Played Titles</CardDescription>
+            <CardDescription className="tech-label">Played Titles</CardDescription>
             <CardTitle className="text-3xl">{playedGames}</CardTitle>
           </CardHeader>
           <CardContent className="text-sm text-muted-foreground">Games with playtime greater than zero.</CardContent>
         </Card>
         <Card className="card-elevated">
           <CardHeader className="pb-2">
-            <CardDescription>Total Playtime</CardDescription>
+            <CardDescription className="tech-label">Total Playtime</CardDescription>
             <CardTitle className="flex items-center gap-2 text-3xl">
               <Clock3 className="h-6 w-6 text-primary" />
               {(totalPlaytimeMinutes / 60).toFixed(1)}h
@@ -420,10 +436,10 @@ function HomeDashboard({ games, accounts, syncing, onSync, onOpenLibrary }) {
           <CardContent>
             <div className="space-y-2">
               {accounts.map((account) => (
-                <div key={`${account.platform}-${account.account_ref}`} className="select-none rounded-lg border border-border/70 bg-secondary/20 p-3">
+                <div key={`${account.platform}-${account.account_ref}`} className="select-none rounded-lg border border-border/70 bg-muted p-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.02),0_10px_20px_rgba(0,0,0,0.08)]">
                   <div className="flex items-center justify-between">
                     <p className="text-sm font-medium capitalize">{account.platform}</p>
-                    <span className="rounded-full bg-background/60 px-2 py-0.5 text-xs text-muted-foreground">
+                    <span className="rounded-full bg-background px-2 py-0.5 font-display text-[0.6875rem] uppercase text-muted-foreground">
                       {account.total_games} games
                     </span>
                   </div>
@@ -459,7 +475,7 @@ function HomeDashboard({ games, accounts, syncing, onSync, onOpenLibrary }) {
               </div>
               <div className="w-[200px]">
                 <Select value={platformFilter} onValueChange={setPlatformFilter}>
-                  <SelectTrigger className="h-10 bg-secondary/80">
+                  <SelectTrigger className="h-10 bg-secondary">
                     <SelectValue placeholder="Platform" />
                   </SelectTrigger>
                   <SelectContent>
@@ -473,7 +489,7 @@ function HomeDashboard({ games, accounts, syncing, onSync, onOpenLibrary }) {
               </div>
               <div className="w-[200px]">
                 <Select value={sortBy} onValueChange={setSortBy}>
-                  <SelectTrigger className="h-10 bg-secondary/80">
+                  <SelectTrigger className="h-10 bg-secondary">
                     <SelectValue placeholder="Sort by" />
                   </SelectTrigger>
                   <SelectContent>
@@ -491,12 +507,12 @@ function HomeDashboard({ games, accounts, syncing, onSync, onOpenLibrary }) {
               <div className="space-y-2">
                 {pagedGames.map((game) => (
                   <button
-                    key={`${game.platform}-${game.id}`}
-                    type="button"
-                    onClick={onOpenLibrary}
-                    className="flex w-full select-none items-center gap-3 rounded-lg border border-border/70 bg-secondary/20 p-2 text-left transition hover:bg-secondary/40"
-                  >
-                    <div className="h-14 w-11 shrink-0 overflow-hidden rounded-md border border-border/70 bg-black/30">
+                  key={`${game.platform}-${game.id}`}
+                  type="button"
+                  onClick={onOpenLibrary}
+                  className="flex w-full select-none items-center gap-3 rounded-xl border border-border/70 bg-muted p-2 text-left shadow-[inset_0_1px_0_rgba(255,255,255,0.02)] transition-[transform,background-color,border-color,box-shadow] hover:-translate-y-px hover:bg-secondary hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.03),0_12px_22px_rgba(0,0,0,0.14)]"
+                >
+                  <div className="h-14 w-11 shrink-0 overflow-hidden rounded-md border border-border/70 bg-black/30 shadow-[0_8px_18px_rgba(0,0,0,0.16)]">
                       <GameCover game={game} src={game.image_url || game.metadata?.image_url} alt={game.name || 'game cover'} />
                     </div>
                     <div className="min-w-0">
@@ -518,7 +534,7 @@ function HomeDashboard({ games, accounts, syncing, onSync, onOpenLibrary }) {
                 <span className="text-muted-foreground">Rows</span>
                 <div className="w-[110px]">
                   <Select value={pageSizeOption} onValueChange={setPageSizeOption}>
-                    <SelectTrigger className="h-8 bg-secondary/80">
+                    <SelectTrigger className="h-8 bg-secondary">
                       <SelectValue />
                     </SelectTrigger>
                     <SelectContent>
@@ -596,25 +612,25 @@ export default function App() {
 
   return (
     <div className="bg-hero-gradient flex h-screen flex-col overflow-hidden">
-      <header className="sticky top-0 z-20 border-b border-border/70 bg-background/60 backdrop-blur-xl">
+      <header className="sticky top-0 z-20 border-b border-border/70 bg-background/95 backdrop-blur-sm">
         <div className="mx-auto flex w-[96vw] max-w-[1880px] items-center justify-between py-4">
           <button
             type="button"
             onClick={() => navigate('/')}
-            className="flex select-none items-center gap-3 rounded-md px-1 py-0.5 text-left"
+            className="flex select-none items-center gap-3 rounded-lg px-2 py-1 text-left transition-colors hover:bg-secondary/55"
           >
-            <img src="/app-icon.svg" alt="GameSyncD icon" className="h-9 w-9 rounded-lg" />
+            <img src="/app-icon.svg" alt="GameSyncD icon" className="logo-mono h-9 w-9 rounded-md" />
             <div>
-              <p className="text-lg font-semibold tracking-tight">{uiTheme.appName}</p>
+              <p className="font-display text-lg font-semibold uppercase tracking-[0.05em]">{uiTheme.appName}</p>
               <p className="text-xs text-muted-foreground">{uiTheme.tagline}</p>
             </div>
           </button>
 
-          <nav className="flex select-none items-center gap-1 rounded-full border border-border/80 bg-card/50 p-1">
+          <nav className="surface-soft flex select-none items-center gap-1 border border-border/80 bg-card p-1">
             <button
               type="button"
               onClick={() => navigate('/')}
-              className={`inline-flex items-center gap-2 rounded-full px-3 py-1 text-sm ${route === '/' ? 'bg-primary text-primary-foreground' : 'text-muted-foreground hover:bg-secondary/60'}`}
+              className={`inline-flex items-center gap-2 rounded-md px-3 py-1.5 text-sm uppercase tracking-[0.05em] transition-[transform,background-color,box-shadow] ${route === '/' ? 'bg-primary text-primary-foreground shadow-[0_10px_18px_rgba(0,0,0,0.16)]' : 'text-muted-foreground hover:-translate-y-px hover:bg-secondary'}`}
             >
               <Gamepad2 className="h-4 w-4" />
               Home
@@ -622,7 +638,7 @@ export default function App() {
             <button
               type="button"
               onClick={() => navigate('/library')}
-              className={`inline-flex items-center gap-2 rounded-full px-3 py-1 text-sm ${route === '/library' ? 'bg-primary text-primary-foreground' : 'text-muted-foreground hover:bg-secondary/60'}`}
+              className={`inline-flex items-center gap-2 rounded-md px-3 py-1.5 text-sm uppercase tracking-[0.05em] transition-[transform,background-color,box-shadow] ${route === '/library' ? 'bg-primary text-primary-foreground shadow-[0_10px_18px_rgba(0,0,0,0.16)]' : 'text-muted-foreground hover:-translate-y-px hover:bg-secondary'}`}
             >
               <Library className="h-4 w-4" />
               Library
