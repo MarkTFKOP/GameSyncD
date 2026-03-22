@@ -94,9 +94,20 @@ Saved under `OUTPUT_DIR` (default `data/`):
 - `game_accounts_latest.json`
 - `games_latest.bkp.json`
 - `game_accounts_latest.bkp.json`
+- `epic_games_fallback.json`
+- `epic_games_fallback.bkp.json`
 
 The sync process always overwrites the same latest files and keeps backup copies.
 If a write fails, it restores from rollback and preserves the previous valid data.
+
+## Epic fallback behavior
+
+Epic uses `legendary` when available locally. When a live Epic fetch succeeds, the sync also refreshes:
+
+- `data/epic_games_fallback.json`
+- `data/epic_games_fallback.bkp.json`
+
+If `legendary` is unavailable in a hosted environment, the sync reuses that fallback snapshot instead of dropping Epic from the combined library.
 
 ## Epic troubleshooting
 

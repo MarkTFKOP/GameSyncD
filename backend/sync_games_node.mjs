@@ -11,12 +11,6 @@ const GOG_COOKIE = (process.env.GOG_COOKIE || '').trim();
 const OUTPUT_DIR = (process.env.OUTPUT_DIR || 'data').trim() || 'data';
 const LEGENDARY_BIN = (process.env.LEGENDARY_BIN || '').trim();
 
-function timestamp() {
-  const d = new Date();
-  const pad = (n) => String(n).padStart(2, '0');
-  return `${d.getFullYear()}${pad(d.getMonth() + 1)}${pad(d.getDate())}_${pad(d.getHours())}${pad(d.getMinutes())}${pad(d.getSeconds())}`;
-}
-
 function parseCookieHeader(raw) {
   const out = {};
   if (!raw) return out;
@@ -171,10 +165,10 @@ async function fetchEpicGames() {
     const parsed = JSON.parse(stdout);
     if (!Array.isArray(parsed)) {
       console.log('Epic fetch failed: unexpected JSON format');
-      return [];
+      return { games: [], live: false };
     }
 
-    return parsed
+    const games = parsed
       .filter((g) => g && typeof g === 'object')
       .map((g) => {
         const externalId = String(g.app_name || g.id || '').trim();
@@ -200,6 +194,8 @@ async function fetchEpicGames() {
         });
       })
       .filter(Boolean);
+
+    return { games, live: true };
   } catch (err) {
     if (err?.code === 'ENOENT') {
       console.log(
@@ -208,8 +204,40 @@ async function fetchEpicGames() {
     } else {
       console.log(`Epic fetch failed: ${err.message}`);
     }
+    return { games: [], live: false };
+  }
+}
+
+async function readFallbackJson(filePath) {
+  try {
+    const raw = await fs.readFile(filePath, 'utf8');
+    const parsed = JSON.parse(raw);
+    return Array.isArray(parsed) ? parsed : [];
+  } catch {
     return [];
   }
+}
+
+async function resolveEpicGames(outputDir) {
+  const epicFallback = path.join(outputDir, 'epic_games_fallback.json');
+  const epicFallbackBackup = path.join(outputDir, 'epic_games_fallback.bkp.json');
+  const result = await fetchEpicGames();
+
+  if (result.live) {
+    await writeWithBackup(epicFallback, epicFallbackBackup, result.games);
+    return result.games;
+  }
+
+  const primaryFallbackGames = await readFallbackJson(epicFallback);
+  const backupFallbackGames = await readFallbackJson(epicFallbackBackup);
+  const fallbackGames =
+    primaryFallbackGames.length > 0 ? primaryFallbackGames : backupFallbackGames;
+
+  if (fallbackGames.length) {
+    console.log(`Epic fallback in use: ${fallbackGames.length} games from local snapshot.`);
+  }
+
+  return fallbackGames;
 }
 
 function extractGogGames(payload) {
@@ -356,7 +384,7 @@ async function main() {
   });
 
   console.log('Fetching Epic...');
-  const epic = await fetchEpicGames();
+  const epic = await resolveEpicGames(OUTPUT_DIR);
 
   console.log('Fetching GOG...');
   const gog = await fetchGogGames();
