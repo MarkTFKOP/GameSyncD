@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: gamesyncd
+    runtime: node
+    plan: free
+    buildCommand: npm --prefix frontend install && npm --prefix frontend run build
+    startCommand: node backend/server.mjs
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      - key: OUTPUT_DIR
+        value: data

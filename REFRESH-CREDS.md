@@ -13,7 +13,7 @@ Use this guide when a sync starts failing because access expired, accounts chang
 
 - [env.sh](/Users/markpereira/Desktop/My_Files/My Projects/sync-games/env.sh)
 - [env.example](/Users/markpereira/Desktop/My_Files/My Projects/sync-games/env.example)
-- [sync_games_node.mjs](/Users/markpereira/Desktop/My_Files/My Projects/sync-games/sync_games_node.mjs)
+- [backend/sync_games_node.mjs](/Users/markpereira/Desktop/My_Files/My Projects/sync-games/backend/sync_games_node.mjs)
 
 ## Steam
 
@@ -46,7 +46,7 @@ export STEAM_ID="7656119xxxxxxxxxx"
 Run:
 
 ```bash
-node sync_games_node.mjs
+node backend/sync_games_node.mjs
 ```
 
 If Steam is configured correctly, `games_latest.json` should include `platform: "steam"` entries.
@@ -79,7 +79,7 @@ Notes:
 Run:
 
 ```bash
-node sync_games_node.mjs
+node backend/sync_games_node.mjs
 ```
 
 If GOG is configured correctly, `games_latest.json` should include `platform: "gog"` entries.
@@ -116,7 +116,7 @@ legendary list-games --json
 Then run:
 
 ```bash
-node sync_games_node.mjs
+node backend/sync_games_node.mjs
 ```
 
 If Epic is configured correctly, `games_latest.json` should include `platform: "epic"` entries.
@@ -133,7 +133,7 @@ If Epic is configured correctly, `games_latest.json` should include `platform: "
 3. Or re-run sync only:
 
 ```bash
-node sync_games_node.mjs
+node backend/sync_games_node.mjs
 ```
 
 ## Troubleshooting

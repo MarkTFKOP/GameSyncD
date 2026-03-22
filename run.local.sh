@@ -14,7 +14,7 @@ source "./env.sh"
 mkdir -p "${OUTPUT_DIR:-data}"
 
 echo "Running initial sync..."
-node sync_games_node.mjs
+node backend/sync_games_node.mjs
 
 if [[ ! -d "frontend/node_modules" ]]; then
   echo "Installing frontend dependencies..."
@@ -22,7 +22,7 @@ if [[ ! -d "frontend/node_modules" ]]; then
 fi
 
 echo "Starting backend at http://localhost:${BACKEND_PORT:-8787}"
-node server.mjs &
+node backend/server.mjs &
 BACKEND_PID=$!
 
 cleanup() {

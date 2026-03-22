@@ -6,11 +6,13 @@ import { fileURLToPath } from 'node:url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+const ROOT_DIR = path.resolve(__dirname, '..');
 
 const PORT = Number(process.env.PORT || process.env.BACKEND_PORT || 8787);
 const OUTPUT_DIR = (process.env.OUTPUT_DIR || 'data').trim() || 'data';
 const CORS_ORIGIN = (process.env.CORS_ORIGIN || '*').trim() || '*';
-const PUBLIC_DIR = path.join(__dirname, 'public');
+const PUBLIC_DIR = path.join(ROOT_DIR, 'public');
+const FRONTEND_DIST_DIR = path.join(ROOT_DIR, 'frontend', 'dist');
 
 function json(res, status, data) {
   res.writeHead(status, {
@@ -39,8 +41,8 @@ async function readJsonWithBackup(primaryPath, backupPath) {
 
 function runSync() {
   return new Promise((resolve) => {
-    const child = spawn(process.execPath, ['sync_games_node.mjs'], {
-      cwd: __dirname,
+    const child = spawn(process.execPath, [path.join(__dirname, 'sync_games_node.mjs')], {
+      cwd: ROOT_DIR,
       env: process.env,
       stdio: ['ignore', 'pipe', 'pipe'],
     });
@@ -77,6 +79,10 @@ async function serveFile(res, filePath) {
           ? 'text/css; charset=utf-8'
           : ext === '.js'
             ? 'application/javascript; charset=utf-8'
+            : ext === '.svg'
+              ? 'image/svg+xml'
+              : ext === '.json'
+                ? 'application/json; charset=utf-8'
             : 'application/octet-stream';
     res.writeHead(200, { 'Content-Type': type });
     res.end(data);
@@ -84,6 +90,22 @@ async function serveFile(res, filePath) {
     res.writeHead(404);
     res.end('Not found');
   }
+}
+
+async function fileExists(filePath) {
+  try {
+    await fs.access(filePath);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+async function resolveStaticDir() {
+  if (await fileExists(path.join(FRONTEND_DIST_DIR, 'index.html'))) {
+    return FRONTEND_DIST_DIR;
+  }
+  return PUBLIC_DIR;
 }
 
 function isSafeImageUrl(raw) {
@@ -113,8 +135,8 @@ const server = http.createServer(async (req, res) => {
 
   if (url.pathname === '/api/games/latest') {
     const data = await readJsonWithBackup(
-      path.join(__dirname, OUTPUT_DIR, 'games_latest.json'),
-      path.join(__dirname, OUTPUT_DIR, 'games_latest.bkp.json'),
+      path.join(ROOT_DIR, OUTPUT_DIR, 'games_latest.json'),
+      path.join(ROOT_DIR, OUTPUT_DIR, 'games_latest.bkp.json'),
     );
     if (!data) return json(res, 404, { ok: false, error: 'games_latest(.bkp).json not found' });
     return json(res, 200, data);
@@ -122,8 +144,8 @@ const server = http.createServer(async (req, res) => {
 
   if (url.pathname === '/api/accounts/latest') {
     const data = await readJsonWithBackup(
-      path.join(__dirname, OUTPUT_DIR, 'game_accounts_latest.json'),
-      path.join(__dirname, OUTPUT_DIR, 'game_accounts_latest.bkp.json'),
+      path.join(ROOT_DIR, OUTPUT_DIR, 'game_accounts_latest.json'),
+      path.join(ROOT_DIR, OUTPUT_DIR, 'game_accounts_latest.bkp.json'),
     );
     if (!data) return json(res, 404, { ok: false, error: 'game_accounts_latest(.bkp).json not found' });
     return json(res, 200, data);
@@ -165,6 +187,18 @@ const server = http.createServer(async (req, res) => {
     } catch {
       return json(res, 502, { ok: false, error: 'Image proxy failed' });
     }
+  }
+
+  const staticDir = await resolveStaticDir();
+  const requestedPath = url.pathname === '/' ? '/index.html' : url.pathname;
+  const absoluteStaticPath = path.join(staticDir, requestedPath);
+
+  if (await fileExists(absoluteStaticPath)) {
+    return serveFile(res, absoluteStaticPath);
+  }
+
+  if (staticDir === FRONTEND_DIST_DIR) {
+    return serveFile(res, path.join(FRONTEND_DIST_DIR, 'index.html'));
   }
 
   if (url.pathname === '/' || url.pathname === '/index.html') {

@@ -1,10 +1,10 @@
-# sync-games
+# sync-games | GameSyncD
 
 Lightweight backend + modern frontend for fetching and viewing owned games from Steam, Epic (Legendary), and GOG.
 
 ## Stack
 
-- Backend: Node.js (`server.mjs`, `sync_games_node.mjs`)
+- Backend: Node.js (`backend/server.mjs`, `backend/sync_games_node.mjs`)
 - Frontend: Vite + React + shadcn-style components + TanStack Table (`frontend/`)
 
 ## Quick start
@@ -22,6 +22,47 @@ Lightweight backend + modern frontend for fetching and viewing owned games from 
    - Frontend: `http://localhost:5173`
    - Backend API: `http://localhost:8787`
 
+## Render deployment
+
+This repo can be deployed to Render as a single Node web service.
+
+Files involved:
+
+- [render.yaml](/Users/markpereira/Desktop/My_Files/My Projects/sync-games/render.yaml)
+- [backend/server.mjs](/Users/markpereira/Desktop/My_Files/My Projects/sync-games/backend/server.mjs)
+- [backend/sync_games_node.mjs](/Users/markpereira/Desktop/My_Files/My Projects/sync-games/backend/sync_games_node.mjs)
+
+### Recommended Render shape
+
+- One `Web Service`
+- Build command:
+  ```bash
+  npm --prefix frontend install && npm --prefix frontend run build
+  ```
+- Start command:
+  ```bash
+  node backend/server.mjs
+  ```
+
+`backend/server.mjs` will serve the built React app from `frontend/dist` in production.
+
+### Environment variables to set in Render
+
+- `STEAM_API_KEY`
+- `STEAM_ID`
+- `GOG_COOKIE`
+- `OUTPUT_DIR=data`
+- optional: `LEGENDARY_BIN`
+
+### Important limitation
+
+Render web services do not give you durable local app storage by default. This app currently stores synced JSON in local files under `data/`, so:
+
+- synced data can be lost on redeploy or instance restart
+- you may need to trigger `Sync` again after deployment/restart
+
+For personal use, this is usually acceptable. If you want durable server-side storage later, move `data/` to object storage or a database.
+
 ## Required setup
 
 - Node.js 18+
@@ -36,7 +77,7 @@ Lightweight backend + modern frontend for fetching and viewing owned games from 
 - GOG:
   - `GOG_COOKIE` (full raw cookie header from logged-in `www.gog.com` request)
 
-Credential refresh steps are documented in [credentials-refresh.md](/Users/markpereira/Desktop/My_Files/My Projects/sync-games/docs/credentials-refresh.md).
+Credential refresh steps are documented in [REFRESH-CREDS.md](/Users/markpereira/Desktop/My_Files/My Projects/sync-games/REFRESH-CREDS.md).
 
 ## API
 
@@ -74,8 +115,8 @@ If Epic returns zero games:
 
 ## Files
 
-- `sync_games_node.mjs`: sync job (Steam + Epic + GOG)
-- `server.mjs`: API server
+- `backend/sync_games_node.mjs`: sync job (Steam + Epic + GOG)
+- `backend/server.mjs`: API server
 - `frontend/`: Vite React UI
 - `run.local.sh`: one-command sync + backend + frontend
 - `env.example`: template env
