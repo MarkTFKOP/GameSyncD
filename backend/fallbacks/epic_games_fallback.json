@@ -1,0 +1,647 @@
+[
+  {
+    "platform": "epic",
+    "id": "19927295d6e3467887d4e830d8c85963",
+    "name": "Absolute Drift",
+    "playtime_minutes": 0,
+    "platform_id": "epic",
+    "external_id": "19927295d6e3467887d4e830d8c85963",
+    "image_url": "https://cdn1.epicgames.com/9d2f484bbec64aa8ad234b3199dcaf1c/item/EGS_AbsoluteDrift_FunselektorLabsInc_S2-1200x1600-d61d185c1a25c41b211b497b89648832.jpg",
+    "metadata": {
+      "namespace": null,
+      "version": null,
+      "is_dlc": false,
+      "image_url": "https://cdn1.epicgames.com/9d2f484bbec64aa8ad234b3199dcaf1c/item/EGS_AbsoluteDrift_FunselektorLabsInc_S2-1200x1600-d61d185c1a25c41b211b497b89648832.jpg"
+    }
+  },
+  {
+    "platform": "epic",
+    "id": "ece4c58603d04bcb97454be9a7492fa6",
+    "name": "Amnesia:  The Dark Descent",
+    "playtime_minutes": 0,
+    "platform_id": "epic",
+    "external_id": "ece4c58603d04bcb97454be9a7492fa6",
+    "image_url": "https://cdn1.epicgames.com/917551a8060244469eb4e6ab8a99cf24/item/Diesel_productv2_amnesia-the-dark-descent_home_EGS_AmnesiaTheDarkDescent_FrictionalGames_S2-860x1148-04d7db0e47bac6bacddf1fb57022b7175a5de1b8-860x1148-915edc588aa36f970396deda73e3f74e.jpg",
+    "metadata": {
+      "namespace": null,
+      "version": null,
+      "is_dlc": false,
+      "image_url": "https://cdn1.epicgames.com/917551a8060244469eb4e6ab8a99cf24/item/Diesel_productv2_amnesia-the-dark-descent_home_EGS_AmnesiaTheDarkDescent_FrictionalGames_S2-860x1148-04d7db0e47bac6bacddf1fb57022b7175a5de1b8-860x1148-915edc588aa36f970396deda73e3f74e.jpg"
+    }
+  },
+  {
+    "platform": "epic",
+    "id": "d7db33dfe7634d6b8a188c708f2caa3c",
+    "name": "Amnesia: A Machine for Pigs",
+    "playtime_minutes": 0,
+    "platform_id": "epic",
+    "external_id": "d7db33dfe7634d6b8a188c708f2caa3c",
+    "image_url": "https://cdn1.epicgames.com/8de58df378c34407b6db0388e0470a45/item/EGS_AmnesiaAMachineforPigs_TheChineseRoom_S2-860x1148-c01e8b083d04dd0cdf76ee2390bc1cce.jpg",
+    "metadata": {
+      "namespace": null,
+      "version": null,
+      "is_dlc": false,
+      "image_url": "https://cdn1.epicgames.com/8de58df378c34407b6db0388e0470a45/item/EGS_AmnesiaAMachineforPigs_TheChineseRoom_S2-860x1148-c01e8b083d04dd0cdf76ee2390bc1cce.jpg"
+    }
+  },
+  {
+    "platform": "epic",
+    "id": "aa78f7be2ee64193b6b6444c5fc50157",
+    "name": "Among the Sleep - Enhanced Edition",
+    "playtime_minutes": 0,
+    "platform_id": "epic",
+    "external_id": "aa78f7be2ee64193b6b6444c5fc50157",
+    "image_url": "https://cdn1.epicgames.com/salesEvent/salesEvent/EGS_AmongtheSleepEnhancedEdition_KrillbiteStudioAS_S2_1200x1600-ba43835916e83b6cecc56b71af8e3eb1",
+    "metadata": {
+      "namespace": null,
+      "version": null,
+      "is_dlc": false,
+      "image_url": "https://cdn1.epicgames.com/salesEvent/salesEvent/EGS_AmongtheSleepEnhancedEdition_KrillbiteStudioAS_S2_1200x1600-ba43835916e83b6cecc56b71af8e3eb1"
+    }
+  },
+  {
+    "platform": "epic",
+    "id": "aafc587fbf654758802c8e41e4fb3255",
+    "name": "ARK: Survival Evolved",
+    "playtime_minutes": 0,
+    "platform_id": "epic",
+    "external_id": "aafc587fbf654758802c8e41e4fb3255",
+    "image_url": "https://cdn1.epicgames.com/ark/item/EGS_ARKSurvivalEvolved_StudioWildcard_S2-1200x1600-5b58fdefea9f885c7426e894a1034921.jpg",
+    "metadata": {
+      "namespace": null,
+      "version": null,
+      "is_dlc": false,
+      "image_url": "https://cdn1.epicgames.com/ark/item/EGS_ARKSurvivalEvolved_StudioWildcard_S2-1200x1600-5b58fdefea9f885c7426e894a1034921.jpg"
+    }
+  },
+  {
+    "platform": "epic",
+    "id": "e3c0d11648554383b33da58d075fd101",
+    "name": "Astro Duel 2",
+    "playtime_minutes": 0,
+    "platform_id": "epic",
+    "external_id": "e3c0d11648554383b33da58d075fd101",
+    "image_url": "https://cdn1.epicgames.com/spt-assets/3251b927449a471c883aab00c076d63c/astro-duel-2-1hv9q.png",
+    "metadata": {
+      "namespace": null,
+      "version": null,
+      "is_dlc": false,
+      "image_url": "https://cdn1.epicgames.com/spt-assets/3251b927449a471c883aab00c076d63c/astro-duel-2-1hv9q.png"
+    }
+  },
+  {
+    "platform": "epic",
+    "id": "a21fd90517bf428eb7c995a8c3261722",
+    "name": "Black Widow: Recharged",
+    "playtime_minutes": 0,
+    "platform_id": "epic",
+    "external_id": "a21fd90517bf428eb7c995a8c3261722",
+    "image_url": "https://cdn1.epicgames.com/salesEvent/salesEvent/EGS_BlackWidowRecharged_AdamVisionSneakyBox_S2_1200x1600-d2fd7ae525a6162f045ea4f1337db25c",
+    "metadata": {
+      "namespace": null,
+      "version": null,
+      "is_dlc": false,
+      "image_url": "https://cdn1.epicgames.com/salesEvent/salesEvent/EGS_BlackWidowRecharged_AdamVisionSneakyBox_S2_1200x1600-d2fd7ae525a6162f045ea4f1337db25c"
+    }
+  },
+  {
+    "platform": "epic",
+    "id": "Catnip",
+    "name": "Borderlands 3",
+    "playtime_minutes": 0,
+    "platform_id": "epic",
+    "external_id": "Catnip",
+    "image_url": "https://cdn1.epicgames.com/catnip/item/BL3Tall_1200x1440-1200x1440-c1200ae70b5e054025e296746d1987a8.jpg",
+    "metadata": {
+      "namespace": null,
+      "version": null,
+      "is_dlc": false,
+      "image_url": "https://cdn1.epicgames.com/catnip/item/BL3Tall_1200x1440-1200x1440-c1200ae70b5e054025e296746d1987a8.jpg"
+    }
+  },
+  {
+    "platform": "epic",
+    "id": "998af0ab527c493baefb8049250c9a0e",
+    "name": "Bridge Constructor: The Walking Dead",
+    "playtime_minutes": 0,
+    "platform_id": "epic",
+    "external_id": "998af0ab527c493baefb8049250c9a0e",
+    "image_url": "https://cdn1.epicgames.com/39697c68e46b48d2b75e17bdc417d859/item/EGS_BridgeConstructorTheWalkingDead_ClockStoneSoftware_S2-1200x1600-a6fe394eb2f1d31fe4646b1539487ac3-1200x1600-a6fe394eb2f1d31fe4646b1539487ac3.jpg",
+    "metadata": {
+      "namespace": null,
+      "version": null,
+      "is_dlc": false,
+      "image_url": "https://cdn1.epicgames.com/39697c68e46b48d2b75e17bdc417d859/item/EGS_BridgeConstructorTheWalkingDead_ClockStoneSoftware_S2-1200x1600-a6fe394eb2f1d31fe4646b1539487ac3-1200x1600-a6fe394eb2f1d31fe4646b1539487ac3.jpg"
+    }
+  },
+  {
+    "platform": "epic",
+    "id": "8727e9d0693542bda60769dc2ce33c20",
+    "name": "Centipede Recharged",
+    "playtime_minutes": 0,
+    "platform_id": "epic",
+    "external_id": "8727e9d0693542bda60769dc2ce33c20",
+    "image_url": "https://cdn1.epicgames.com/salesEvent/salesEvent/EGS_CentipedeRecharged_AdamVisionSneakyBox_S2_1200x1600-c21cc55f661ac17b68c78c90b38dca52",
+    "metadata": {
+      "namespace": null,
+      "version": null,
+      "is_dlc": false,
+      "image_url": "https://cdn1.epicgames.com/salesEvent/salesEvent/EGS_CentipedeRecharged_AdamVisionSneakyBox_S2_1200x1600-c21cc55f661ac17b68c78c90b38dca52"
+    }
+  },
+  {
+    "platform": "epic",
+    "id": "82a78a4dd6ef4eaa892707791b705073",
+    "name": "Costume Quest 2",
+    "playtime_minutes": 0,
+    "platform_id": "epic",
+    "external_id": "82a78a4dd6ef4eaa892707791b705073",
+    "image_url": "https://cdn1.epicgames.com/c660f57e1a164930a7196f1fd27ae45a/item/EGS_SequeltotheHalloweenadventurefromDoubleFine_DoubleFine_S2-1200x1600-7f56dc465460d2e82182e8d8ab4b99d3.jpg",
+    "metadata": {
+      "namespace": null,
+      "version": null,
+      "is_dlc": false,
+      "image_url": "https://cdn1.epicgames.com/c660f57e1a164930a7196f1fd27ae45a/item/EGS_SequeltotheHalloweenadventurefromDoubleFine_DoubleFine_S2-1200x1600-7f56dc465460d2e82182e8d8ab4b99d3.jpg"
+    }
+  },
+  {
+    "platform": "epic",
+    "id": "923130ebb546417b9d3115507f752d34",
+    "name": "Darkwood",
+    "playtime_minutes": 0,
+    "platform_id": "epic",
+    "external_id": "923130ebb546417b9d3115507f752d34",
+    "image_url": "https://cdn1.epicgames.com/spt-assets/f98517036ab5480ebd9c68d7249188b4/darkwood-etee8.jpg",
+    "metadata": {
+      "namespace": null,
+      "version": null,
+      "is_dlc": false,
+      "image_url": "https://cdn1.epicgames.com/spt-assets/f98517036ab5480ebd9c68d7249188b4/darkwood-etee8.jpg"
+    }
+  },
+  {
+    "platform": "epic",
+    "id": "Crow",
+    "name": "Dead Island 2",
+    "playtime_minutes": 0,
+    "platform_id": "epic",
+    "external_id": "Crow",
+    "image_url": "https://cdn1.epicgames.com/item/236c74b4cd2e4e3099cbe2ebdc9686fd/EGS_DeadIsland2_DeepSilverDambusterStudios_S2_1200x1600-efc5201842cf642eb45f73227cd0789b_1200x1600-efc5201842cf642eb45f73227cd0789b",
+    "metadata": {
+      "namespace": null,
+      "version": null,
+      "is_dlc": false,
+      "image_url": "https://cdn1.epicgames.com/item/236c74b4cd2e4e3099cbe2ebdc9686fd/EGS_DeadIsland2_DeepSilverDambusterStudios_S2_1200x1600-efc5201842cf642eb45f73227cd0789b_1200x1600-efc5201842cf642eb45f73227cd0789b"
+    }
+  },
+  {
+    "platform": "epic",
+    "id": "7334aba246154b63857435cb9c7eecd5",
+    "name": "Disco Elysium - The Final Cut",
+    "playtime_minutes": 0,
+    "platform_id": "epic",
+    "external_id": "7334aba246154b63857435cb9c7eecd5",
+    "image_url": "https://cdn1.epicgames.com/spt-assets/9003e1ade0b14e8688b08030e7a335fd/disco-elysium-9x1mw.jpg",
+    "metadata": {
+      "namespace": null,
+      "version": null,
+      "is_dlc": false,
+      "image_url": "https://cdn1.epicgames.com/spt-assets/9003e1ade0b14e8688b08030e7a335fd/disco-elysium-9x1mw.jpg"
+    }
+  },
+  {
+    "platform": "epic",
+    "id": "c5109bdceb3a453bb38c2fdc964ddee8",
+    "name": "Doki Doki Literature Club Plus!",
+    "playtime_minutes": 0,
+    "platform_id": "epic",
+    "external_id": "c5109bdceb3a453bb38c2fdc964ddee8",
+    "image_url": "https://cdn1.epicgames.com/salesEvent/salesEvent/EGS_DokiDokiLiteratureClubPlus_TeamSalvato_S2_1200x1600-9c6fa6ac4b26e9ad4fb0d3e35797dcac",
+    "metadata": {
+      "namespace": null,
+      "version": null,
+      "is_dlc": false,
+      "image_url": "https://cdn1.epicgames.com/salesEvent/salesEvent/EGS_DokiDokiLiteratureClubPlus_TeamSalvato_S2_1200x1600-9c6fa6ac4b26e9ad4fb0d3e35797dcac"
+    }
+  },
+  {
+    "platform": "epic",
+    "id": "7ec86711ef70447fbfd4370ba9f185c6",
+    "name": "Felix The Reaper",
+    "playtime_minutes": 0,
+    "platform_id": "epic",
+    "external_id": "7ec86711ef70447fbfd4370ba9f185c6",
+    "image_url": "https://cdn1.epicgames.com/spt-assets/582d7a7c91264ee2b68f93e666870a1b/felix-the-reaper-1w390.png",
+    "metadata": {
+      "namespace": null,
+      "version": null,
+      "is_dlc": false,
+      "image_url": "https://cdn1.epicgames.com/spt-assets/582d7a7c91264ee2b68f93e666870a1b/felix-the-reaper-1w390.png"
+    }
+  },
+  {
+    "platform": "epic",
+    "id": "da2038ef19e94554898056d79168b3f8",
+    "name": "Football Manager 2024",
+    "playtime_minutes": 0,
+    "platform_id": "epic",
+    "external_id": "da2038ef19e94554898056d79168b3f8",
+    "image_url": "https://cdn1.epicgames.com/offer/610a546d4e204215a0b9a1c8a382bacb/EGS_FootballManager2024_SportsInteractive_S2_1200x1600-d59e8b3545615cbc8a51d8acd316dd60",
+    "metadata": {
+      "namespace": null,
+      "version": null,
+      "is_dlc": false,
+      "image_url": "https://cdn1.epicgames.com/offer/610a546d4e204215a0b9a1c8a382bacb/EGS_FootballManager2024_SportsInteractive_S2_1200x1600-d59e8b3545615cbc8a51d8acd316dd60"
+    }
+  },
+  {
+    "platform": "epic",
+    "id": "08c5c041aa2c4fe08fbd87c08fb37c36",
+    "name": "Football Manager 2024 Pre-game editor",
+    "playtime_minutes": 0,
+    "platform_id": "epic",
+    "external_id": "08c5c041aa2c4fe08fbd87c08fb37c36",
+    "image_url": "https://cdn1.epicgames.com/item/610a546d4e204215a0b9a1c8a382bacb/ProductPortraitImage1200x1600-pge_1200x1600-bc97ef7bf1a67453144c8cf43ed71418",
+    "metadata": {
+      "namespace": null,
+      "version": null,
+      "is_dlc": false,
+      "image_url": "https://cdn1.epicgames.com/item/610a546d4e204215a0b9a1c8a382bacb/ProductPortraitImage1200x1600-pge_1200x1600-bc97ef7bf1a67453144c8cf43ed71418"
+    }
+  },
+  {
+    "platform": "epic",
+    "id": "7e9ca4940ed0427699f687f538d8f72d",
+    "name": "Football Manager 2024 Resource archiver",
+    "playtime_minutes": 0,
+    "platform_id": "epic",
+    "external_id": "7e9ca4940ed0427699f687f538d8f72d",
+    "image_url": "https://cdn1.epicgames.com/item/610a546d4e204215a0b9a1c8a382bacb/ProductPortraitImage1200x1600-ra_1200x1600-fb5b0224e70de7ba5c4ac53facfb6b08",
+    "metadata": {
+      "namespace": null,
+      "version": null,
+      "is_dlc": false,
+      "image_url": "https://cdn1.epicgames.com/item/610a546d4e204215a0b9a1c8a382bacb/ProductPortraitImage1200x1600-ra_1200x1600-fb5b0224e70de7ba5c4ac53facfb6b08"
+    }
+  },
+  {
+    "platform": "epic",
+    "id": "ba0ad8b38e5642fc8de85d2017a3d70b",
+    "name": "Gas Station Simulator",
+    "playtime_minutes": 0,
+    "platform_id": "epic",
+    "external_id": "ba0ad8b38e5642fc8de85d2017a3d70b",
+    "image_url": "https://cdn1.epicgames.com/spt-assets/e48463d2c1fc4e17a3860fbbc8e54edc/gas-station-simulator-180e9.jpg",
+    "metadata": {
+      "namespace": null,
+      "version": null,
+      "is_dlc": false,
+      "image_url": "https://cdn1.epicgames.com/spt-assets/e48463d2c1fc4e17a3860fbbc8e54edc/gas-station-simulator-180e9.jpg"
+    }
+  },
+  {
+    "platform": "epic",
+    "id": "Grouse",
+    "name": "Jotun Valhalla Edition",
+    "playtime_minutes": 0,
+    "platform_id": "epic",
+    "external_id": "Grouse",
+    "image_url": "https://cdn1.epicgames.com/ba3149b6d7a7488ab5cc674154458757/item/EGS_ThunderLotus_JotunValhallaEdition_S2-1280x1440-eceef05b236cf920e419b4004d4993e7.jpg",
+    "metadata": {
+      "namespace": null,
+      "version": null,
+      "is_dlc": false,
+      "image_url": "https://cdn1.epicgames.com/ba3149b6d7a7488ab5cc674154458757/item/EGS_ThunderLotus_JotunValhallaEdition_S2-1280x1440-eceef05b236cf920e419b4004d4993e7.jpg"
+    }
+  },
+  {
+    "platform": "epic",
+    "id": "a1e2ce30defe4a9187ebc14fc9d2bd8b",
+    "name": "Kerbal Space Program",
+    "playtime_minutes": 0,
+    "platform_id": "epic",
+    "external_id": "a1e2ce30defe4a9187ebc14fc9d2bd8b",
+    "image_url": "https://cdn1.epicgames.com/item/ca0530b485754032be50cb6f27be0c2c/EGS_KerbalSpaceProgram_Squad_S2_1200x1600-7442f5c8047e6ef3d062ea731b60f443",
+    "metadata": {
+      "namespace": null,
+      "version": null,
+      "is_dlc": false,
+      "image_url": "https://cdn1.epicgames.com/item/ca0530b485754032be50cb6f27be0c2c/EGS_KerbalSpaceProgram_Squad_S2_1200x1600-7442f5c8047e6ef3d062ea731b60f443"
+    }
+  },
+  {
+    "platform": "epic",
+    "id": "33411619626243f1859d0b7fb5cc5405",
+    "name": "KID A MNESIA EXHIBITION",
+    "playtime_minutes": 0,
+    "platform_id": "epic",
+    "external_id": "33411619626243f1859d0b7fb5cc5405",
+    "image_url": "https://cdn1.epicgames.com/salesEvent/salesEvent/EGS_KIDAMNESIAEXHIBITION_namethemachinexAGP_S2_1200x1600-03e1673e38cde74b38c35bfbba4d4aea",
+    "metadata": {
+      "namespace": null,
+      "version": null,
+      "is_dlc": false,
+      "image_url": "https://cdn1.epicgames.com/salesEvent/salesEvent/EGS_KIDAMNESIAEXHIBITION_namethemachinexAGP_S2_1200x1600-03e1673e38cde74b38c35bfbba4d4aea"
+    }
+  },
+  {
+    "platform": "epic",
+    "id": "f7a0ebb44f93430fb1c4388a395eba96",
+    "name": "Loop Hero",
+    "playtime_minutes": 0,
+    "platform_id": "epic",
+    "external_id": "f7a0ebb44f93430fb1c4388a395eba96",
+    "image_url": "https://cdn1.epicgames.com/ff50f85ed609454e80ac46d9496da34d/item/EGS_TheLichhasthrowntheworldintoatimelessloop_FourQuarters_S2-1200x1600-9ce7ff725ffafa800300b644df5936cd.jpg",
+    "metadata": {
+      "namespace": null,
+      "version": null,
+      "is_dlc": false,
+      "image_url": "https://cdn1.epicgames.com/ff50f85ed609454e80ac46d9496da34d/item/EGS_TheLichhasthrowntheworldintoatimelessloop_FourQuarters_S2-1200x1600-9ce7ff725ffafa800300b644df5936cd.jpg"
+    }
+  },
+  {
+    "platform": "epic",
+    "id": "cd1b8a6e5b6c47369e2a1e2cf7b7f536",
+    "name": "Night in the Woods",
+    "playtime_minutes": 0,
+    "platform_id": "epic",
+    "external_id": "cd1b8a6e5b6c47369e2a1e2cf7b7f536",
+    "image_url": "https://cdn1.epicgames.com/abd29ccc8c2a4a40a31f27de63cb0603/item/EGS_NightintheWoods_InfiniteFall_S2-1200x1600-c6e902bb51df819a40f3b3f2b8081849.jpg",
+    "metadata": {
+      "namespace": null,
+      "version": null,
+      "is_dlc": false,
+      "image_url": "https://cdn1.epicgames.com/abd29ccc8c2a4a40a31f27de63cb0603/item/EGS_NightintheWoods_InfiniteFall_S2-1200x1600-c6e902bb51df819a40f3b3f2b8081849.jpg"
+    }
+  },
+  {
+    "platform": "epic",
+    "id": "635e08e4b4824baabd24ef3cf941743c",
+    "name": "Obduction",
+    "playtime_minutes": 0,
+    "platform_id": "epic",
+    "external_id": "635e08e4b4824baabd24ef3cf941743c",
+    "image_url": "https://cdn1.epicgames.com/salesEvent/salesEvent/EGS_Obduction_CyanInc_S2_1200x1600-7a12b5dfb5998545f1b285e1647be99b",
+    "metadata": {
+      "namespace": null,
+      "version": null,
+      "is_dlc": false,
+      "image_url": "https://cdn1.epicgames.com/salesEvent/salesEvent/EGS_Obduction_CyanInc_S2_1200x1600-7a12b5dfb5998545f1b285e1647be99b"
+    }
+  },
+  {
+    "platform": "epic",
+    "id": "Snapper",
+    "name": "Offworld Trading Company",
+    "playtime_minutes": 0,
+    "platform_id": "epic",
+    "external_id": "Snapper",
+    "image_url": "https://cdn1.epicgames.com/e8882546f28e4832af823c646aed232e/item/EGS_MohawkGames_OffworldTradingCompany_Portrait-510x680-7a9909ce27ac1d94813f6f49f6632871.jpg",
+    "metadata": {
+      "namespace": null,
+      "version": null,
+      "is_dlc": false,
+      "image_url": "https://cdn1.epicgames.com/e8882546f28e4832af823c646aed232e/item/EGS_MohawkGames_OffworldTradingCompany_Portrait-510x680-7a9909ce27ac1d94813f6f49f6632871.jpg"
+    }
+  },
+  {
+    "platform": "epic",
+    "id": "ad10e9b2f38d491499785412149cdc49",
+    "name": "Ogu and the Secret Forest",
+    "playtime_minutes": 0,
+    "platform_id": "epic",
+    "external_id": "ad10e9b2f38d491499785412149cdc49",
+    "image_url": "https://cdn1.epicgames.com/spt-assets/ab32c6c664f340f0bb18afcb9b036dae/ogu-and-the-secret-forest-1e37g.png",
+    "metadata": {
+      "namespace": null,
+      "version": null,
+      "is_dlc": false,
+      "image_url": "https://cdn1.epicgames.com/spt-assets/ab32c6c664f340f0bb18afcb9b036dae/ogu-and-the-secret-forest-1e37g.png"
+    }
+  },
+  {
+    "platform": "epic",
+    "id": "668ffa8fce0847ef9f1c005995cee6df",
+    "name": "Prison Architect",
+    "playtime_minutes": 0,
+    "platform_id": "epic",
+    "external_id": "668ffa8fce0847ef9f1c005995cee6df",
+    "image_url": "https://cdn1.epicgames.com/item/3ffb410dab2d409aacd39a1abc6fcbba/EGS_PrisonArchitect_DoubleEleven_S2_1200x1600-414a3c16492da2d1500fc942fae1ef10",
+    "metadata": {
+      "namespace": null,
+      "version": null,
+      "is_dlc": false,
+      "image_url": "https://cdn1.epicgames.com/item/3ffb410dab2d409aacd39a1abc6fcbba/EGS_PrisonArchitect_DoubleEleven_S2_1200x1600-414a3c16492da2d1500fc942fae1ef10"
+    }
+  },
+  {
+    "platform": "epic",
+    "id": "bf363d9625a5406f904d925f3e613327",
+    "name": "Scourgebringer",
+    "playtime_minutes": 0,
+    "platform_id": "epic",
+    "external_id": "bf363d9625a5406f904d925f3e613327",
+    "image_url": "https://cdn1.epicgames.com/c03a3687567a4cf3910ea5ec7279664e/item/b3b676d2-3004-47db-b004-b0886cbefc16-1200x1600-ae53ef4bf4c28af8c253c043c35c78d1.jpg",
+    "metadata": {
+      "namespace": null,
+      "version": null,
+      "is_dlc": false,
+      "image_url": "https://cdn1.epicgames.com/c03a3687567a4cf3910ea5ec7279664e/item/b3b676d2-3004-47db-b004-b0886cbefc16-1200x1600-ae53ef4bf4c28af8c253c043c35c78d1.jpg"
+    }
+  },
+  {
+    "platform": "epic",
+    "id": "ecfdc10170eb49b6b61cf16b3aa36d56",
+    "name": "Tannenberg",
+    "playtime_minutes": 0,
+    "platform_id": "epic",
+    "external_id": "ecfdc10170eb49b6b61cf16b3aa36d56",
+    "image_url": "https://cdn1.epicgames.com/salesEvent/salesEvent/EGS_Tannenberg_M2HBlackmillGames_S4_1200x1600-6a68dbd9a3765682e954deb3343ec76e",
+    "metadata": {
+      "namespace": null,
+      "version": null,
+      "is_dlc": false,
+      "image_url": "https://cdn1.epicgames.com/salesEvent/salesEvent/EGS_Tannenberg_M2HBlackmillGames_S4_1200x1600-6a68dbd9a3765682e954deb3343ec76e"
+    }
+  },
+  {
+    "platform": "epic",
+    "id": "582c8940f499450d9033840efe5937a6",
+    "name": "Terraforming Mars",
+    "playtime_minutes": 0,
+    "platform_id": "epic",
+    "external_id": "582c8940f499450d9033840efe5937a6",
+    "image_url": "https://cdn1.epicgames.com/spt-assets/5199b206e46947ebad5e5c282e95776f/terraforming-mars-1rntb.jpg",
+    "metadata": {
+      "namespace": null,
+      "version": null,
+      "is_dlc": false,
+      "image_url": "https://cdn1.epicgames.com/spt-assets/5199b206e46947ebad5e5c282e95776f/terraforming-mars-1rntb.jpg"
+    }
+  },
+  {
+    "platform": "epic",
+    "id": "3ce838d7a25c49368a22918b56e88f2a",
+    "name": "The Battle of Polytopia",
+    "playtime_minutes": 0,
+    "platform_id": "epic",
+    "external_id": "3ce838d7a25c49368a22918b56e88f2a",
+    "image_url": "https://cdn1.epicgames.com/spt-assets/b312dfc1b33d459daa55a67d53a56223/the-battle-of-polytopia-128mo.png",
+    "metadata": {
+      "namespace": null,
+      "version": null,
+      "is_dlc": false,
+      "image_url": "https://cdn1.epicgames.com/spt-assets/b312dfc1b33d459daa55a67d53a56223/the-battle-of-polytopia-128mo.png"
+    }
+  },
+  {
+    "platform": "epic",
+    "id": "5cd54ad0ead447738bd9552b3d2a105b",
+    "name": "The Drone Racing League Simulator",
+    "playtime_minutes": 0,
+    "platform_id": "epic",
+    "external_id": "5cd54ad0ead447738bd9552b3d2a105b",
+    "image_url": "https://cdn1.epicgames.com/salesEvent/salesEvent/EGS_TheDroneRacingLeagueSimulator_TheDroneRacingLeague_S2_1200x1600-36e93298383163f825fc934da9003fb5",
+    "metadata": {
+      "namespace": null,
+      "version": null,
+      "is_dlc": false,
+      "image_url": "https://cdn1.epicgames.com/salesEvent/salesEvent/EGS_TheDroneRacingLeagueSimulator_TheDroneRacingLeague_S2_1200x1600-36e93298383163f825fc934da9003fb5"
+    }
+  },
+  {
+    "platform": "epic",
+    "id": "4d0ff75b922447649057c237c0bd1545",
+    "name": "The Elder Scrolls Online",
+    "playtime_minutes": 0,
+    "platform_id": "epic",
+    "external_id": "4d0ff75b922447649057c237c0bd1545",
+    "image_url": "https://cdn1.epicgames.com/item/27aa2ebdcda14b3bb8a669aab73ca55f/EGS_TheElderScrollsOnline_ZeniMaxOnlineStudios_S2_1200x1600-aeae74e624021e4fa8e5f8feaabc5a71",
+    "metadata": {
+      "namespace": null,
+      "version": null,
+      "is_dlc": false,
+      "image_url": "https://cdn1.epicgames.com/item/27aa2ebdcda14b3bb8a669aab73ca55f/EGS_TheElderScrollsOnline_ZeniMaxOnlineStudios_S2_1200x1600-aeae74e624021e4fa8e5f8feaabc5a71"
+    }
+  },
+  {
+    "platform": "epic",
+    "id": "cd98b47155654e1f9a9e84e60d0b49e4",
+    "name": "The First Tree",
+    "playtime_minutes": 0,
+    "platform_id": "epic",
+    "external_id": "cd98b47155654e1f9a9e84e60d0b49e4",
+    "image_url": "https://cdn1.epicgames.com/489c2ca47aaa4190b694184b979d3b23/item/EGS_TheFirstTree_DavidWehle_S2-1200x1600-4f04f881988fdcf35257acdbfd98727e.jpg",
+    "metadata": {
+      "namespace": null,
+      "version": null,
+      "is_dlc": false,
+      "image_url": "https://cdn1.epicgames.com/489c2ca47aaa4190b694184b979d3b23/item/EGS_TheFirstTree_DavidWehle_S2-1200x1600-4f04f881988fdcf35257acdbfd98727e.jpg"
+    }
+  },
+  {
+    "platform": "epic",
+    "id": "ed93b18355a84230938c705121c63661",
+    "name": "The Long Dark",
+    "playtime_minutes": 0,
+    "platform_id": "epic",
+    "external_id": "ed93b18355a84230938c705121c63661",
+    "image_url": "https://cdn1.epicgames.com/58dfcd1952ee48c1a1fa31c6ace5fe3d/item/EGS_TheLongDark_HinterlandStudioInc_S6-1200x1600-3debfeb01e511b9e1221f973b6bb1fe7.jpg",
+    "metadata": {
+      "namespace": null,
+      "version": null,
+      "is_dlc": false,
+      "image_url": "https://cdn1.epicgames.com/58dfcd1952ee48c1a1fa31c6ace5fe3d/item/EGS_TheLongDark_HinterlandStudioInc_S6-1200x1600-3debfeb01e511b9e1221f973b6bb1fe7.jpg"
+    }
+  },
+  {
+    "platform": "epic",
+    "id": "5919f2a03ba34e36b8e7de60acc26736",
+    "name": "The Operator",
+    "playtime_minutes": 0,
+    "platform_id": "epic",
+    "external_id": "5919f2a03ba34e36b8e7de60acc26736",
+    "image_url": "https://cdn1.epicgames.com/spt-assets/65963abab56541eda0887402d505167e/the-operator-dme1v.png",
+    "metadata": {
+      "namespace": null,
+      "version": null,
+      "is_dlc": false,
+      "image_url": "https://cdn1.epicgames.com/spt-assets/65963abab56541eda0887402d505167e/the-operator-dme1v.png"
+    }
+  },
+  {
+    "platform": "epic",
+    "id": "37d84dd0b65a40e9b0719141b987a216",
+    "name": "ToeJam & Earl: Back in the Groove!",
+    "playtime_minutes": 0,
+    "platform_id": "epic",
+    "external_id": "37d84dd0b65a40e9b0719141b987a216",
+    "image_url": "https://cdn1.epicgames.com/spt-assets/428b51d4cd29482889841fa188b362b4/download-toejam-and-earl-back-in-the-groove-offer-a6vua.png",
+    "metadata": {
+      "namespace": null,
+      "version": null,
+      "is_dlc": false,
+      "image_url": "https://cdn1.epicgames.com/spt-assets/428b51d4cd29482889841fa188b362b4/download-toejam-and-earl-back-in-the-groove-offer-a6vua.png"
+    }
+  },
+  {
+    "platform": "epic",
+    "id": "1136763135c0482cbbb4b2d45e978156",
+    "name": "Vampire Survivors",
+    "playtime_minutes": 0,
+    "platform_id": "epic",
+    "external_id": "1136763135c0482cbbb4b2d45e978156",
+    "image_url": "https://cdn1.epicgames.com/spt-assets/6091b3f3943e4a7aa25fcac13de15cd1/vampire-survivors-1jbti.jpg",
+    "metadata": {
+      "namespace": null,
+      "version": null,
+      "is_dlc": false,
+      "image_url": "https://cdn1.epicgames.com/spt-assets/6091b3f3943e4a7aa25fcac13de15cd1/vampire-survivors-1jbti.jpg"
+    }
+  },
+  {
+    "platform": "epic",
+    "id": "bd60c8f307e24e70abf12938e606d0c9",
+    "name": "Vampire: The Masquerade - Reckoning of New York",
+    "playtime_minutes": 0,
+    "platform_id": "epic",
+    "external_id": "bd60c8f307e24e70abf12938e606d0c9",
+    "image_url": "https://cdn1.epicgames.com/spt-assets/abe1ad8f84c0404599010bec16ec6f56/vampire-the-masquerade--reckoning-of-new-york-ygz2q.jpg",
+    "metadata": {
+      "namespace": null,
+      "version": null,
+      "is_dlc": false,
+      "image_url": "https://cdn1.epicgames.com/spt-assets/abe1ad8f84c0404599010bec16ec6f56/vampire-the-masquerade--reckoning-of-new-york-ygz2q.jpg"
+    }
+  },
+  {
+    "platform": "epic",
+    "id": "38c0129b680e4843b4807b98bad67027",
+    "name": "Verdun",
+    "playtime_minutes": 0,
+    "platform_id": "epic",
+    "external_id": "38c0129b680e4843b4807b98bad67027",
+    "image_url": "https://cdn1.epicgames.com/item/e4a2a414d46849f49a35c0f80df2903a/EGS_Verdun_BlackmillGamesM2H_S2_1200x1600-87b0a1a746d4e990c318a6e71ecae744",
+    "metadata": {
+      "namespace": null,
+      "version": null,
+      "is_dlc": false,
+      "image_url": "https://cdn1.epicgames.com/item/e4a2a414d46849f49a35c0f80df2903a/EGS_Verdun_BlackmillGamesM2H_S2_1200x1600-87b0a1a746d4e990c318a6e71ecae744"
+    }
+  },
+  {
+    "platform": "epic",
+    "id": "4f272a49a39742b795d63e1f483a7c7d",
+    "name": "while True: learn()",
+    "playtime_minutes": 0,
+    "platform_id": "epic",
+    "external_id": "4f272a49a39742b795d63e1f483a7c7d",
+    "image_url": "https://cdn1.epicgames.com/salesEvent/salesEvent/EGS_whileTruelearn_Ludenio_S2_1200x1600-f1259b2f801db59d751dd5e5076b6330",
+    "metadata": {
+      "namespace": null,
+      "version": null,
+      "is_dlc": false,
+      "image_url": "https://cdn1.epicgames.com/salesEvent/salesEvent/EGS_whileTruelearn_Ludenio_S2_1200x1600-f1259b2f801db59d751dd5e5076b6330"
+    }
+  }
+]

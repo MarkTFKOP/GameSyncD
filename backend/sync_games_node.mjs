@@ -2,8 +2,13 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { execFile } from 'node:child_process';
 import { promisify } from 'node:util';
+import { fileURLToPath } from 'node:url';
 
 const execFileAsync = promisify(execFile);
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const ROOT_DIR = path.resolve(__dirname, '..');
+const EPIC_SEED_FALLBACK_DIR = path.join(__dirname, 'fallbacks');
 
 const STEAM_API_KEY = (process.env.STEAM_API_KEY || '').trim();
 const STEAM_ID = (process.env.STEAM_ID || '').trim();
@@ -144,7 +149,7 @@ async function fetchEpicGames() {
   const runCandidates = async () => {
     const candidates = [];
     if (LEGENDARY_BIN) candidates.push(LEGENDARY_BIN);
-    candidates.push(path.join(process.cwd(), 'venv', 'bin', 'legendary'));
+    candidates.push(path.join(ROOT_DIR, 'venv', 'bin', 'legendary'));
     candidates.push('legendary');
 
     let lastError;
@@ -221,17 +226,25 @@ async function readFallbackJson(filePath) {
 async function resolveEpicGames(outputDir) {
   const epicFallback = path.join(outputDir, 'epic_games_fallback.json');
   const epicFallbackBackup = path.join(outputDir, 'epic_games_fallback.bkp.json');
+  const epicSeedFallback = path.join(EPIC_SEED_FALLBACK_DIR, 'epic_games_fallback.json');
   const result = await fetchEpicGames();
 
   if (result.live) {
+    await fs.mkdir(EPIC_SEED_FALLBACK_DIR, { recursive: true });
     await writeWithBackup(epicFallback, epicFallbackBackup, result.games);
+    await writeJson(epicSeedFallback, result.games);
     return result.games;
   }
 
   const primaryFallbackGames = await readFallbackJson(epicFallback);
   const backupFallbackGames = await readFallbackJson(epicFallbackBackup);
+  const seedFallbackGames = await readFallbackJson(epicSeedFallback);
   const fallbackGames =
-    primaryFallbackGames.length > 0 ? primaryFallbackGames : backupFallbackGames;
+    primaryFallbackGames.length > 0
+      ? primaryFallbackGames
+      : backupFallbackGames.length > 0
+        ? backupFallbackGames
+        : seedFallbackGames;
 
   if (fallbackGames.length) {
     console.log(`Epic fallback in use: ${fallbackGames.length} games from local snapshot.`);
@@ -375,7 +388,7 @@ async function writeWithBackup(targetPath, backupPath, data) {
 }
 
 async function main() {
-  await fs.mkdir(OUTPUT_DIR, { recursive: true });
+  await fs.mkdir(path.join(ROOT_DIR, OUTPUT_DIR), { recursive: true });
 
   console.log('Fetching Steam...');
   const steam = await fetchSteamGames().catch((err) => {
@@ -384,7 +397,7 @@ async function main() {
   });
 
   console.log('Fetching Epic...');
-  const epic = await resolveEpicGames(OUTPUT_DIR);
+  const epic = await resolveEpicGames(path.join(ROOT_DIR, OUTPUT_DIR));
 
   console.log('Fetching GOG...');
   const gog = await fetchGogGames();
@@ -396,10 +409,10 @@ async function main() {
   });
 
   const accounts = buildGameAccounts(games);
-  const gamesLatest = path.join(OUTPUT_DIR, 'games_latest.json');
-  const accountsLatest = path.join(OUTPUT_DIR, 'game_accounts_latest.json');
-  const gamesBackup = path.join(OUTPUT_DIR, 'games_latest.bkp.json');
-  const accountsBackup = path.join(OUTPUT_DIR, 'game_accounts_latest.bkp.json');
+  const gamesLatest = path.join(ROOT_DIR, OUTPUT_DIR, 'games_latest.json');
+  const accountsLatest = path.join(ROOT_DIR, OUTPUT_DIR, 'game_accounts_latest.json');
+  const gamesBackup = path.join(ROOT_DIR, OUTPUT_DIR, 'games_latest.bkp.json');
+  const accountsBackup = path.join(ROOT_DIR, OUTPUT_DIR, 'game_accounts_latest.bkp.json');
 
   await writeWithBackup(gamesLatest, gamesBackup, games);
   await writeWithBackup(accountsLatest, accountsBackup, accounts);

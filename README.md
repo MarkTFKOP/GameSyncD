@@ -106,8 +106,15 @@ Epic uses `legendary` when available locally. When a live Epic fetch succeeds, t
 
 - `data/epic_games_fallback.json`
 - `data/epic_games_fallback.bkp.json`
+- `backend/fallbacks/epic_games_fallback.json`
 
-If `legendary` is unavailable in a hosted environment, the sync reuses that fallback snapshot instead of dropping Epic from the combined library.
+`backend/fallbacks/epic_games_fallback.json` is the committed production seed snapshot.
+
+If `legendary` is unavailable in a hosted environment, the sync reuses fallback data in this order instead of dropping Epic from the combined library:
+
+1. `data/epic_games_fallback.json`
+2. `data/epic_games_fallback.bkp.json`
+3. `backend/fallbacks/epic_games_fallback.json`
 
 ## Epic troubleshooting
 
